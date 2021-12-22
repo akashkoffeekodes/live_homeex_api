@@ -4,9 +4,8 @@ import 'package:home_ex/login.dart';
 import 'package:home_ex/register.dart';
 import 'package:home_ex/resetpass.dart';
 import 'package:home_ex/splash.dart';
-
-
 import 'forgetpassword.dart';
+import 'homepage.dart';
 import 'onboard.dart';
 
 void main(){
@@ -19,7 +18,7 @@ class Home_ex extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home: Resetpass(),
+    home: Splash(),
     );
   }
 }

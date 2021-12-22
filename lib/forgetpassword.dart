@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
+import 'package:home_ex/resetpass.dart';
 
 class Forgetpass extends StatefulWidget {
   const Forgetpass({Key key}) : super(key: key);
@@ -78,6 +79,10 @@ class _ForgetpassState extends State<Forgetpass> {
               padding: EdgeInsets.only(right: 20, left: 20),
               child: RaisedButton(
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Resetpass ()),
+                  );
                 },
                 color: AppColors.darkblue,
                 shape: RoundedRectangleBorder(

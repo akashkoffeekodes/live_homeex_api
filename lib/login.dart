@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
+import 'package:home_ex/forgetpassword.dart';
 import 'package:home_ex/register.dart';
 
 class Loginpage extends StatefulWidget {
@@ -9,6 +10,7 @@ class Loginpage extends StatefulWidget {
   @override
   _LoginpageState createState() => _LoginpageState();
 }
+
 final _formKey = GlobalKey<FormState>();
 final key = GlobalKey<FormState>();
 
@@ -49,13 +51,18 @@ class _LoginpageState extends State<Loginpage> {
                 height: 100,
                 child: TextFormField(
                   controller: emailController,
-                 validator: validateEmail,
+                  //validator: validateEmail,
                   style: TextStyle(
                     fontSize: 10,
                   ),
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
+                    fillColor: AppColors.grey,
                     enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blueGrey, width: 1.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Colors.pinkAccent, width: 1.0),
                     ),
@@ -70,12 +77,17 @@ class _LoginpageState extends State<Loginpage> {
                 ),
                 child: TextFormField(
                   controller: passwordController,
-                  validator:validatePassword ,
+                  validator: validatePassword,
                   style: TextStyle(
                     fontSize: 10,
                   ),
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
+                    fillColor: AppColors.grey,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blueGrey, width: 1.0),
+                    ),
                     focusedBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Colors.pinkAccent, width: 1.0),
@@ -87,6 +99,9 @@ class _LoginpageState extends State<Loginpage> {
               Container(
                   alignment: Alignment.topLeft,
                   child: CheckboxListTile(
+                    activeColor: Colors.grey,
+                    checkColor: Colors.white,
+
                     title: Text(
                       "Remember me",
                       style: TextStyle(fontSize: 10),
@@ -97,47 +112,64 @@ class _LoginpageState extends State<Loginpage> {
                         checkedValue = newValue;
                       });
                     },
-                    controlAffinity:
-                        ListTileControlAffinity.leading, //  <-- leading Checkbox
+                    controlAffinity: ListTileControlAffinity
+                        .leading, //  <-- leading Checkbox
                   )),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
+              
               Container(
-                child: Text("Forget password",style: TextStyle(fontSize: 10,fontFamily: "RobotoCondensed-Bold"),),
+                
+                child:
+                InkWell(onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Forgetpass()),
+                  );
+                },
+                  child: Text(
+                    "Forget password",
+                    style: TextStyle(
+                        fontSize: 10, fontFamily: "RobotoCondensed-Bold"),
+
+                  ),
+                ),
               ),
               SizedBox(height: 20),
               Container(
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.only(right: 20,left: 20),
-                child:   RaisedButton(
+                padding: EdgeInsets.only(right: 40, left: 40),
+                child: RaisedButton(
                   onPressed: () {
-                    if(key.currentState.validate());
-
+                    if (key.currentState.validate()) ;
                   },
-
                   color: AppColors.pink,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                   child: Text("Login"),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.only(left: 20,right: 20),
-                child:   RaisedButton(
+                padding: EdgeInsets.only(left: 40, right: 40),
+                child: RaisedButton(
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Register()),
                     );
-
                   },
                   color: AppColors.darkblue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
-                  child: Text("Register with us",style: TextStyle(
-                    color: Colors.white,fontSize: 15
-                  ),),
+                  child: Text(
+                    "Register with us",
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
                 ),
               ),
             ],
@@ -146,6 +178,7 @@ class _LoginpageState extends State<Loginpage> {
       ),
     );
   }
+
   void login(context) async {
     if (_formKey.currentState.validate()) {
       // If the form is valid, display a snackbar. In the real world,
@@ -154,12 +187,11 @@ class _LoginpageState extends State<Loginpage> {
         const SnackBar(content: Text('Processing Data')),
       );
     }
-
   }
 }
 
 String validateEmail(String value) {
-  if(value.isEmpty){
+  if (value.isEmpty) {
     return "Enter your email-id";
   }
   Pattern pattern = "@";
@@ -171,14 +203,12 @@ String validateEmail(String value) {
   return null;
 }
 
-
 String validatePassword(String value) {
   if (value.isEmpty) {
-    return  'enter your password';
+    return 'enter your password';
   }
   if (value.length < 4) {
-    return  'use more than 4 character';
+    return 'use more than 4 character';
   }
   return null;
 }
-

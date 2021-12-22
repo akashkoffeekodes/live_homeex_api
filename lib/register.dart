@@ -20,205 +20,254 @@ class _RegisterState extends State<Register> {
   TextEditingController passwordController = new TextEditingController();
   TextEditingController mobileController = new TextEditingController();
 
+  bool click = false;
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+
         child: Form(
           key: key,
-          child: Column(
-            children: [
-              //for icon
-              Container(
-                padding: EdgeInsets.only(top: 20),
-                alignment: Alignment.topCenter,
-                child: Image.asset(
-                  "assets/image/darklogo.png",
-                  width: 140,
-                  height: 140,
-                ),
-              ),
-              //for Text form feild
-              Container(
-                padding: EdgeInsets.only(
-                  right: 20,
-                  left: 20,
-                  top: 20,
-                ),
-                child: TextFormField(
-                  controller: nameController,
-                  validator: validateemail,
-                  style: TextStyle(
-                    fontSize: 10,
-                  ),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                        borderSide: BorderSide(color: AppColors.pink)),
-                    hintText: "Name",
+          child: Container(
+
+            child: Column(
+
+              children: [
+                //for icon
+                Container(
+                  padding: EdgeInsets.only(top: 20),
+                  alignment: Alignment.topCenter,
+                  child: Image.asset(
+                    "assets/image/darklogo.png",
+                    width: 140,
+                    height: 140,
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                  right: 20,
-                  left: 20,
-                ),
-                child: TextFormField(
-                  controller: emailController,
-                  validator: validatename,
-                  style: TextStyle(
-                    fontSize: 10,
+                //for Text form feild
+                Container(
+                  padding: EdgeInsets.only(
+                    right: 20,
+                    left: 20,
+                    top: 20,
                   ),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.pinkAccent, width: 1.0),
-                    ),
-                    hintText: "Email",
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                  right: 20,
-                  left: 20,
-                ),
-                child: TextFormField(
-                  controller: passwordController,
-                  validator: validatemobile,
-                  style: TextStyle(
-                    fontSize: 10,
-                  ),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.pinkAccent, width: 1.0),
-                    ),
-                    hintText: "Mobile",
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                  right: 20,
-                  left: 20,
-                ),
-                child: TextFormField(
-                  controller: mobileController,
-                  validator: validatepassword,
-                  style: TextStyle(
-                    fontSize: 10,
-                  ),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.pinkAccent, width: 1.0),
-                    ),
-                    hintText: "Mobil",
-                  ),
-                ),
-              ),
-              //for text
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                  padding: EdgeInsets.only(top: 10, left: 20),
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "PROPERTY POSTED BY",
+                  child: TextFormField(
+                    controller: nameController,
+                    validator: validateemail,
                     style: TextStyle(
-                        fontSize: 10, fontFamily: "RobotoCondensed-Regular"),
-                  )),
-              SizedBox(
-                height: 10,
-              ),
-              //button of
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  RaisedButton(
-                    onPressed: () {},
-                    color: AppColors.pink,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Text("Agent"),
+                      fontSize: 10,
+                    ),
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Colors.blueGrey, width: 1.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                      ),
+                      hintText: "Name",
+                    ),
                   ),
-                  SizedBox(
-                    width: 20,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    right: 20,
+                    left: 20,
                   ),
-                  RaisedButton(
-                    onPressed: () {},
-                    color: AppColors.pink,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Text("Owner"),
+                  child: TextFormField(
+                    controller: emailController,
+                    validator: validatename,
+                    style: TextStyle(
+                      fontSize: 10,
+                    ),
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Colors.blueGrey, width: 1.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                      ),
+                      hintText: "Email",
+                    ),
                   ),
-                  SizedBox(
-                    width: 20,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    right: 20,
+                    left: 20,
                   ),
-                  RaisedButton(
-                    onPressed: () {},
-                    color: AppColors.pink,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Text("Builder"),
+                  child: TextFormField(
+                    controller: passwordController,
+                    validator: validatemobile,
+                    style: TextStyle(
+                      fontSize: 10,
+                    ),
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Colors.blueGrey, width: 1.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                      ),
+                      hintText: "Mobile",
+                    ),
                   ),
-                ],
-              ),
-              Container(
-                  alignment: Alignment.topLeft,
-                  child: CheckboxListTile(
-                    title: Text(
-                      "I agree to be contacted by HOME_XP and others for similar properties or related services view By Continuing I agree to Terms and Conditions",
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    right: 20,
+                    left: 20,
+                  ),
+                  child: TextFormField(
+                    controller: mobileController,
+                    validator: validatepassword,
+                    style: TextStyle(
+                      fontSize: 10,
+                    ),
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Colors.blueGrey, width: 1.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                      ),
+                      hintText: "Password",
+                    ),
+                  ),
+                ),
+                //for text
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                    padding: EdgeInsets.only(top: 10, left: 20),
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "PROPERTY POSTED BY",
                       style: TextStyle(
                           fontSize: 10, fontFamily: "RobotoCondensed-Regular"),
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                //button of
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    RaisedButton(
+                      color: (click == true)?  AppColors.pink : AppColors.grey,
+                      onPressed: () {
+                        setState(() {
+                          click = false;
+
+                        });
+
+                      },
+
+                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                      child: Text("Agent"),
                     ),
-                    value: checkedValue,
-                    onChanged: (newValue) {
-                      setState(() {
-                        checkedValue = newValue;
-                      });
-                    },
-                    controlAffinity: ListTileControlAffinity
-                        .leading, //  <-- leading Checkbox
-                  )),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    RaisedButton(
+                      color: (click == false)? AppColors.grey : AppColors.pink   ,
+
+                      onPressed: () {
+                        setState(() {
+                          click = true;
+                        });
+
+                      },
+                      //color: AppColors.pink,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text("Owner"),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    RaisedButton(
+                      color: (click == true)?  AppColors.grey : AppColors.pink,
+                      onPressed: () {
+                        setState(() {
+                          click = false;
+                        });
+
+                      },
+                     // color: AppColors.pink,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text("Builder"),
+                    ),
+                  ],
+                ),
+                Container(
+                    alignment: Alignment.topLeft,
+                    child: CheckboxListTile(
+                      activeColor: Colors.grey,
+                      title: Text(
+                        "I agree to be contacted by HOME_XP and others for similar properties or related services view By Continuing I agree to Terms and Conditions",
+                        style: TextStyle(
+                            fontSize: 10, fontFamily: "RobotoCondensed-Regular"),
+                      ),
+                      value: checkedValue,
+                      onChanged: (newValue) {
+                        setState(() {
+                          checkedValue = newValue;
+                        });
+                      },
+                      controlAffinity: ListTileControlAffinity
+                          .leading, //  <-- leading Checkbox
+                    )),
 
 //Register button
-              SizedBox(
-                height: 30,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.only(right: 20, left: 20),
-                child: RaisedButton(
-                  onPressed: () {
-                    if (key.currentState.validate()) ;
-                  },
-                  color: AppColors.pink,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Text("Register"),
+                SizedBox(
+                  height: 30,
                 ),
-              ),
-            ],
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.only(right: 40, left: 40),
+                  child: RaisedButton(
+                    onPressed: () {
+                      if (key.currentState.validate()) ;
+                    },
+                    color: AppColors.darkblue,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Text("Register",style: TextStyle(
+                      color: Colors.white,fontFamily: "RobotoCondensed-Regular"
+                    ),),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -234,7 +283,11 @@ class _RegisterState extends State<Register> {
       );
     }
   }
-}
+
+
+  }
+
+
 
 String validatename(String value) {
   if (value.isEmpty) {

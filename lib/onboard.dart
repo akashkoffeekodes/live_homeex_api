@@ -8,21 +8,12 @@ class ONboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      home: Onboarding(
+    return Scaffold(
+      body: Onboarding(
         background: Colors.white,
         proceedButtonStyle: ProceedButtonStyle(
-          proceedButtonRoute: (context) {
-            return Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(
-                builder: (context) => Loginpage(),
-              ),
-              (route) => false,
-            );
-          },
+          proceedButtonColor: Colors.white
+
         ),
         pages: [
 
@@ -149,7 +140,7 @@ class ONboard extends StatelessWidget {
                         'Decide if it is for you to sell with',
                       ),
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(height: 10,),
                     Container(
                       alignment: Alignment.center,
                       padding: EdgeInsets.only(left: 10),
@@ -189,8 +180,7 @@ class ONboard extends StatelessWidget {
         isSkippable: false,
         indicator: Indicator(
             indicatorDesign: IndicatorDesign.polygon(
-                polygonDesign: PolygonDesign(
-                    polygon: DesignType.polygon_square, polygonSpacer: 13.0))),
+            )),
       ),
     );
   }
