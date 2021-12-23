@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
+import 'package:home_ex/dashboard.dart';
 import 'package:home_ex/forgetpassword.dart';
 import 'package:home_ex/register.dart';
 
@@ -51,20 +52,31 @@ class _LoginpageState extends State<Loginpage> {
                 height: 100,
                 child: TextFormField(
                   controller: emailController,
-                  //validator: validateEmail,
+                  validator: validateEmail,
                   style: TextStyle(
                     fontSize: 10,
                   ),
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
-                    fillColor: AppColors.grey,
+                    isDense: true,
+                    fillColor: AppColors.textfeild,
                     enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
                       borderSide:
-                          BorderSide(color: Colors.blueGrey, width: 1.0),
+                          BorderSide(color: Colors.blueGrey,),
                     ),
                     focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
                       borderSide:
-                          BorderSide(color: Colors.pinkAccent, width: 1.0),
+                          BorderSide(color: Colors.pinkAccent,),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.red),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.red),
                     ),
                     hintText: "phone no/Email/username",
                   ),
@@ -83,14 +95,25 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
-                    fillColor: AppColors.grey,
+                    isDense: true,
+                    fillColor: AppColors.textfeild,
                     enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
                       borderSide:
-                          BorderSide(color: Colors.blueGrey, width: 1.0),
+                      BorderSide(color: Colors.blueGrey,),
                     ),
                     focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
                       borderSide:
-                          BorderSide(color: Colors.pinkAccent, width: 1.0),
+                      BorderSide(color: Colors.pinkAccent, ),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.red),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.red),
                     ),
                     hintText: "password",
                   ),
@@ -143,11 +166,12 @@ class _LoginpageState extends State<Loginpage> {
                 child: RaisedButton(
                   onPressed: () {
                     if (key.currentState.validate()) ;
+                  //  Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard()),);
                   },
                   color: AppColors.pink,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
-                  child: Text("Login"),
+                  child: Text("Login",style: TextStyle(color: Colors.white),),
                 ),
               ),
               SizedBox(

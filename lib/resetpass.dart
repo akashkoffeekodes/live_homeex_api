@@ -45,15 +45,31 @@ class _ResetpassState extends State<Resetpass> {
                 padding: EdgeInsets.only(right: 20, left: 20),
                 child: TextField(
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                      isDense: true,
+                      fillColor: AppColors.textfeild,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide:
+                        BorderSide(color: Colors.blueGrey,),
                       ),
-                      filled: true,
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide:
+                        BorderSide(color: Colors.pinkAccent, ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
+                      ),
                       hintStyle: TextStyle(
                         color: Colors.black54,
                       ),
                       hintText: "Password",
-                      fillColor: AppColors.grey),
+                      ),
                 ),
               ),
               SizedBox(height: 20,),

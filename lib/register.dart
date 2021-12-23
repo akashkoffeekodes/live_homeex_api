@@ -56,19 +56,31 @@ class _RegisterState extends State<Register> {
                   ),
                   child: TextFormField(
                     controller: nameController,
-                    validator: validateemail,
+                    validator: validatename,
                     style: TextStyle(
                       fontSize: 10,
                     ),
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
+                      isDense: true,
+                      fillColor: AppColors.textfeild,
                       enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                         borderSide:
-                        BorderSide(color: Colors.blueGrey, width: 1.0),
+                        BorderSide(color: Colors.blueGrey,),
                       ),
                       focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                         borderSide:
-                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                        BorderSide(color: Colors.pinkAccent, ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
                       ),
                       hintText: "Name",
                     ),
@@ -84,20 +96,31 @@ class _RegisterState extends State<Register> {
                   ),
                   child: TextFormField(
                     controller: emailController,
-                    validator: validatename,
+                    validator: validateemail,
                     style: TextStyle(
                       fontSize: 10,
                     ),
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
-
+                      isDense: true,
+                      fillColor: AppColors.textfeild,
                       enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                         borderSide:
-                        BorderSide(color: Colors.blueGrey, width: 1.0),
+                        BorderSide(color: Colors.blueGrey,),
                       ),
                       focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                         borderSide:
-                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                        BorderSide(color: Colors.pinkAccent, ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
                       ),
                       hintText: "Email",
                     ),
@@ -112,21 +135,32 @@ class _RegisterState extends State<Register> {
                     left: 20,
                   ),
                   child: TextFormField(
-                    controller: passwordController,
+                    controller: mobileController,
                     validator: validatemobile,
                     style: TextStyle(
                       fontSize: 10,
                     ),
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
-
+                      isDense: true,
+                      fillColor: AppColors.textfeild,
                       enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                         borderSide:
-                        BorderSide(color: Colors.blueGrey, width: 1.0),
+                        BorderSide(color: Colors.blueGrey,),
                       ),
                       focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                         borderSide:
-                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                        BorderSide(color: Colors.pinkAccent, ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
                       ),
                       hintText: "Mobile",
                     ),
@@ -141,20 +175,32 @@ class _RegisterState extends State<Register> {
                     left: 20,
                   ),
                   child: TextFormField(
-                    controller: mobileController,
+                    controller: passwordController,
                     validator: validatepassword,
                     style: TextStyle(
                       fontSize: 10,
                     ),
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
+                      isDense: true,
+                      fillColor: AppColors.textfeild,
                       enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                         borderSide:
-                        BorderSide(color: Colors.blueGrey, width: 1.0),
+                        BorderSide(color: Colors.blueGrey,),
                       ),
                       focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                         borderSide:
-                        BorderSide(color: Colors.pinkAccent, width: 1.0),
+                        BorderSide(color: Colors.pinkAccent, ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.red),
                       ),
                       hintText: "Password",
                     ),

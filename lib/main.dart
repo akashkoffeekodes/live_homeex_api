@@ -4,6 +4,7 @@ import 'package:home_ex/login.dart';
 import 'package:home_ex/register.dart';
 import 'package:home_ex/resetpass.dart';
 import 'package:home_ex/splash.dart';
+import 'dashboard.dart';
 import 'forgetpassword.dart';
 import 'homepage.dart';
 import 'onboard.dart';

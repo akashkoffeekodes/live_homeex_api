@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
+import 'package:home_ex/dashboard.dart';
 import 'package:onboarding/onboarding.dart';
 
 import 'login.dart';
@@ -159,7 +160,7 @@ class ONboard extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (BuildContext context) => Loginpage()
+                                builder: (BuildContext context) => DashBoard()
                             ),
                           );
 
