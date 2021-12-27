@@ -4,6 +4,7 @@ import 'package:home_ex/login.dart';
 import 'package:home_ex/register.dart';
 import 'package:home_ex/resetpass.dart';
 import 'package:home_ex/splash.dart';
+import 'List.dart';
 import 'dashboard.dart';
 import 'forgetpassword.dart';
 import 'homepage.dart';
@@ -19,7 +20,7 @@ class Home_ex extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home: Splash(),
+    home:Listview(),
     );
   }
 }

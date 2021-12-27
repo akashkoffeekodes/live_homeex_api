@@ -53,6 +53,8 @@ class _RegisterState extends State<Register> {
                     right: 20,
                     left: 20,
                     top: 20,
+                    bottom: 20,
+
                   ),
                   child: TextFormField(
                     controller: nameController,
@@ -87,7 +89,7 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 10,
                 ),
                 Container(
                   padding: EdgeInsets.only(
@@ -127,7 +129,7 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height:30,
                 ),
                 Container(
                   padding: EdgeInsets.only(
@@ -167,7 +169,7 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 30,
                 ),
                 Container(
                   padding: EdgeInsets.only(
@@ -208,10 +210,10 @@ class _RegisterState extends State<Register> {
                 ),
                 //for text
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Container(
-                    padding: EdgeInsets.only(top: 10, left: 20),
+                    padding: EdgeInsets.only(top: 5, left: 20),
                     alignment: Alignment.topLeft,
                     child: Text(
                       "PROPERTY POSTED BY",
@@ -277,7 +279,7 @@ class _RegisterState extends State<Register> {
                 Container(
                     alignment: Alignment.topLeft,
                     child: CheckboxListTile(
-                      activeColor: Colors.grey,
+                      activeColor: AppColors.checkbox,
                       title: Text(
                         "I agree to be contacted by HOME_XP and others for similar properties or related services view By Continuing I agree to Terms and Conditions",
                         style: TextStyle(
@@ -304,7 +306,7 @@ class _RegisterState extends State<Register> {
                     onPressed: () {
                       if (key.currentState.validate()) ;
                     },
-                    color: AppColors.darkblue,
+                    color: AppColors.pink,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     child: Text("Register",style: TextStyle(
@@ -352,7 +354,7 @@ String validatemobile(String value) {
   Pattern pattern = "0123456789";
   RegExp regex = RegExp(pattern);
   if (!regex.hasMatch(value)) {
-    return 'Enter valid email-id';
+    return 'Enter valid Mobile num';
   }
 
   return null;

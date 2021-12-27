@@ -122,7 +122,7 @@ class _LoginpageState extends State<Loginpage> {
               Container(
                   alignment: Alignment.topLeft,
                   child: CheckboxListTile(
-                    activeColor: Colors.grey,
+                    activeColor: AppColors.checkbox,
                     checkColor: Colors.white,
 
                     title: Text(
