@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
 import 'package:home_ex/product.dart';
 import 'product.dart';
+import 'propertydetail.dart';
 
 class Listview extends StatefulWidget {
   const Listview({Key key}) : super(key: key);
@@ -36,7 +37,18 @@ class _ListviewState extends State<Listview> {
                     title: Row(
                       children: <Widget>[
 
-                        Image.asset(_model.image,fit: BoxFit.fill,height:100,width: 100,),
+                        GestureDetector(
+
+                            onTap: () {
+
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Propertydetail()),
+                              );
+                            },
+
+
+                            child: Image.asset(_model.image,fit: BoxFit.fill,height:100,width: 100,)),
                         SizedBox(width: 10,),
 
                         Column(

@@ -137,7 +137,8 @@ class _LoginpageState extends State<Loginpage> {
                     },
                     controlAffinity: ListTileControlAffinity
                         .leading, //  <-- leading Checkbox
-                  )),
+                  )
+              ),
               SizedBox(
                 height: 10,
               ),

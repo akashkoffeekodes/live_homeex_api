@@ -9,6 +9,8 @@ import 'dashboard.dart';
 import 'forgetpassword.dart';
 import 'homepage.dart';
 import 'onboard.dart';
+import 'propertydetail.dart';
+import 'salerent.dart';
 
 void main(){
   runApp(Home_ex());
@@ -20,7 +22,7 @@ class Home_ex extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home:DashBoard(),
+    home:  Propertydetail(),
     );
   }
 }
