@@ -37,6 +37,7 @@ dependencies:
   onboarding: ^2.1.0
   introduction_screen: ^1.0.9
   solid_bottom_sheet: ^0.1.10
+  image_picker: ^0.6.6+5
 
 
 

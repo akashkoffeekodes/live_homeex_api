@@ -1,11 +1,11 @@
-import 'dart:ffi';
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
-import 'package:home_ex/login.dart';
-
+import 'package:home_ex/alert.dart';
+import 'List.dart';
 import 'homepage.dart';
+import 'profile.dart';
 
 class DashBoard extends StatefulWidget {
   @override
@@ -49,10 +49,10 @@ class _DashBoardState extends State<DashBoard> {
 
   var pages = [
     new Homepage(),
+    new Listview(),
     new Homepage(),
-    new Homepage(),
-    new Homepage(),
-    new Loginpage()
+    new Alert(),
+    new Profilepage()
   ];
 
   Widget build(BuildContext context) {
@@ -166,12 +166,10 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                   ),
                   BottomNavigationBarItem(
-                    icon: InkWell(
-                        onTap: () {},
-                        child: Image.asset(
-                          "assets/icon/heart.png",
-                          height: 20,
-                        )),
+                    icon: Image.asset(
+                      "assets/icon/heart.png",
+                      height: 20,
+                    ),
                     title: new Text(
                       "Short listed",
                       style: TextStyle(
@@ -234,10 +232,13 @@ class _DashBoardState extends State<DashBoard> {
        context: context,
        builder: (context) {
          return Container(
+
             decoration: BoxDecoration(
+
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(50.0),
                 topLeft: Radius.circular(50.0),
+
               ),
               color: AppColors.bottomsheet,
             ),

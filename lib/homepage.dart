@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:home_ex/Appcolor.dart';
+import 'package:home_ex/user/drawerPage.dart';
+
+import 'user/login.dart';
+import 'user/register.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key key}) : super(key: key);
@@ -10,17 +15,27 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      drawerEnableOpenDragGesture: false,
+      drawer: Drawer(
+      child: drawerPage(),
+      ),
       appBar: AppBar(
         backgroundColor: AppColors.darkblue,
-        leading: IconButton(
-          icon: ImageIcon(
-            AssetImage("assets/icon/menu.png"),
-            color: Colors.white,
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: Image.asset(
+              "assets/icon/menu.png",
+              height: 25,
+              width: 25,
+            ),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+
           ),
-          onPressed: () {},
         ),
         actions: <Widget>[
           SizedBox(
@@ -30,7 +45,6 @@ class _HomepageState extends State<Homepage> {
             "assets/icon/aapbarlogo.png",
             width: 120,
           ),
-
           SizedBox(width: 15),
           Expanded(
             child: InkWell(
@@ -40,8 +54,6 @@ class _HomepageState extends State<Homepage> {
                   child: Image.asset(
                     "assets/icon/Searchbar.png",
                   ),
-
-
                 )),
           ),
           SizedBox(width: 15),
@@ -50,11 +62,8 @@ class _HomepageState extends State<Homepage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             Column(
               children: [
-
-
                 //text box of top
                 Container(
                   color: AppColors.darkblue,
@@ -63,52 +72,57 @@ class _HomepageState extends State<Homepage> {
                       SizedBox(
                         width: 10,
                       ),
-                      ButtonTheme(height: 30,
-                        child:RaisedButton(
-                        onPressed: () {},
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Text(
-                          "APPLY LOAN",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: "RobotoCondensed-Regular"),
-                        ),
-                      ), ),
-
-                      SizedBox(
-                        width: 15,
-                      ),
-                      ButtonTheme(height: 30,
+                      ButtonTheme(
+                        height: 30,
                         child: RaisedButton(
-                        onPressed: () {},
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Text(
-                          "LEGAL SERVICE",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: "RobotoCondensed-Regular"),
+                          onPressed: () {},
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Text(
+                            "APPLY LOAN",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "RobotoCondensed-Regular"),
+                          ),
                         ),
-                      ),),
+                      ),
                       SizedBox(
                         width: 15,
                       ),
-                     ButtonTheme(height: 30,
-                       child:  RaisedButton(
-                       onPressed: () {},
-                       color: Colors.white,
-                       shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(5)),
-                       child: Text(
-                         "PACKAGE",
-                         style: TextStyle(
-                             color: Colors.black,
-                             fontFamily: "RobotoCondensed-Regular"),
-                       ),
-                     ),)
+                      ButtonTheme(
+                        height: 30,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Text(
+                            "LEGAL SERVICE",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "RobotoCondensed-Regular"),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      ButtonTheme(
+                        height: 30,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Text(
+                            "PACKAGE",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "RobotoCondensed-Regular"),
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -117,7 +131,6 @@ class _HomepageState extends State<Homepage> {
                   height: 8,
                 ),
 
-
                 Container(
                   padding: EdgeInsets.only(left: 17),
                   //for user block
@@ -293,124 +306,200 @@ class _HomepageState extends State<Homepage> {
                     )),
 
                 Row(
-
                   children: [
                     Column(
-
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5,left: 25),
-                          child: Image.asset("assets/icon/home.png",height: 20,),
+                          padding: const EdgeInsets.only(
+                              top: 10, bottom: 5, left: 25),
+                          child: Image.asset(
+                            "assets/icon/home.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 10,left: 25,),
-                          child: Text("Smart Home",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                            left: 25,
+                          ),
+                          child: Text(
+                            "Smart Home",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/care.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/care.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Parking",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Parking",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/kidsplayarea.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/kidsplayarea.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Kids Play Area",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Kids Play Area",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/gatden.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/gatden.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Smart Home",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Smart Home",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-
-
-
                   ],
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
-
                   children: [
                     Column(
-
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5,left: 25),
-                          child: Image.asset("assets/icon/airconditon.png",height: 20,),
+                          padding: const EdgeInsets.only(
+                              top: 10, bottom: 5, left: 25),
+                          child: Image.asset(
+                            "assets/icon/airconditon.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 10,left: 25,),
-                          child: Text("Air Condtion",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                            left: 25,
+                          ),
+                          child: Text(
+                            "Air Condtion",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/gym.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/gym.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("GYM",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "GYM",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/home.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/home.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Modular Kitchen",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Modular Kitchen",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/jogging.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/jogging.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Jogging Track",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Jogging Track",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-
-
-
                   ],
                 ),
                 Container(
@@ -425,13 +514,10 @@ class _HomepageState extends State<Homepage> {
                   children: [
                     Row(
                       children: [
-
-
                         Container(
                           width: 180,
                           height: 80,
                           padding: EdgeInsets.all(10),
-
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
@@ -440,27 +526,40 @@ class _HomepageState extends State<Homepage> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 10,left: 10),
-                                  child: Image.asset("assets/icon/card.png",height: 15,),
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: Image.asset(
+                                    "assets/icon/card.png",
+                                    height: 15,
+                                  ),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
-
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10),
-                                      child: Text("Loan amount on property value",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 8),),
+                                      child: Text(
+                                        "Loan amount on property value",
+                                        style: TextStyle(
+                                            fontFamily:
+                                                "RobotoCondensed-Regular",
+                                            fontSize: 8),
+                                      ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 5,left: 10),
-                                      child: Text("₹. 80,00,000",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                                      padding: const EdgeInsets.only(
+                                          top: 5, left: 10),
+                                      child: Text(
+                                        "₹. 80,00,000",
+                                        style: TextStyle(
+                                            fontFamily: "RobotoCondensed-Bold",
+                                            fontSize: 10),
+                                      ),
                                     ),
                                   ],
                                 )
                               ],
-
-
                             ),
                           ),
                         ),
@@ -476,33 +575,45 @@ class _HomepageState extends State<Homepage> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 10,left: 10),
-                                  child: Image.asset("assets/icon/card.png",height: 15,),
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: Image.asset(
+                                    "assets/icon/card.png",
+                                    height: 15,
+                                  ),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
-
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10),
-                                      child: Text("Loan amount on property value",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 8),),
+                                      child: Text(
+                                        "Loan amount on property value",
+                                        style: TextStyle(
+                                            fontFamily:
+                                                "RobotoCondensed-Regular",
+                                            fontSize: 8),
+                                      ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 5,left: 10),
-                                      child: Text("₹. 80,00,000",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                                      padding: const EdgeInsets.only(
+                                          top: 5, left: 10),
+                                      child: Text(
+                                        "₹. 80,00,000",
+                                        style: TextStyle(
+                                            fontFamily: "RobotoCondensed-Bold",
+                                            fontSize: 10),
+                                      ),
                                     ),
                                   ],
                                 )
                               ],
-
-
                             ),
                           ),
                         ),
                       ],
                     ),
-
                     Row(
                       children: [
                         Container(
@@ -517,27 +628,40 @@ class _HomepageState extends State<Homepage> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 10,left: 10),
-                                  child: Image.asset("assets/icon/card.png",height: 15,),
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: Image.asset(
+                                    "assets/icon/card.png",
+                                    height: 15,
+                                  ),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
-
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10),
-                                      child: Text("Loan amount on property value",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 8),),
+                                      child: Text(
+                                        "Loan amount on property value",
+                                        style: TextStyle(
+                                            fontFamily:
+                                                "RobotoCondensed-Regular",
+                                            fontSize: 8),
+                                      ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 5,left: 10),
-                                      child: Text("₹. 80,00,000",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                                      padding: const EdgeInsets.only(
+                                          top: 5, left: 10),
+                                      child: Text(
+                                        "₹. 80,00,000",
+                                        style: TextStyle(
+                                            fontFamily: "RobotoCondensed-Bold",
+                                            fontSize: 10),
+                                      ),
                                     ),
                                   ],
                                 )
                               ],
-
-
                             ),
                           ),
                         ),
@@ -553,71 +677,99 @@ class _HomepageState extends State<Homepage> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 10,left: 10),
-                                  child: Image.asset("assets/icon/card.png",height: 15,),
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: Image.asset(
+                                    "assets/icon/card.png",
+                                    height: 15,
+                                  ),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
-
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10),
-                                      child: Text("Loan amount on property value",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 8),),
+                                      child: Text(
+                                        "Loan amount on property value",
+                                        style: TextStyle(
+                                            fontFamily:
+                                                "RobotoCondensed-Regular",
+                                            fontSize: 8),
+                                      ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 5,left: 10),
-                                      child: Text("₹. 80,00,000",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                                      padding: const EdgeInsets.only(
+                                          top: 5, left: 10),
+                                      child: Text(
+                                        "₹. 80,00,000",
+                                        style: TextStyle(
+                                            fontFamily: "RobotoCondensed-Bold",
+                                            fontSize: 10),
+                                      ),
                                     ),
                                   ],
                                 )
                               ],
-
-
                             ),
                           ),
                         ),
                       ],
                     ),
-
                     Row(
                       children: [
-                        Container(padding: EdgeInsets.only(left: 20),
-                          child: RaisedButton(color: AppColors.darkblue,
-                          onPressed: (){},
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: RaisedButton(
+                              color: AppColors.darkblue,
+                              onPressed: () {},
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
-                              child: Text("      Loan Detail      ",
-                            style: TextStyle(color: Colors.white,fontFamily: "RobotoCondensed-Bold",fontSize: 15),)),
+                              child: Text(
+                                "      Loan Detail      ",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "RobotoCondensed-Bold",
+                                    fontSize: 15),
+                              )),
                         ),
-                        SizedBox(width: 20,),
-                        Container(padding: EdgeInsets.only(left: 20),
-                          child: RaisedButton(color: AppColors.darkblue,
-                              onPressed: (){},
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: RaisedButton(
+                              color: AppColors.darkblue,
+                              onPressed: () {},
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
-                              child: Text("      Loan Detail      ",
-                                style: TextStyle(color: Colors.white,fontFamily: "RobotoCondensed-Bold",fontSize: 15),)),
+                              child: Text(
+                                "      Loan Detail      ",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "RobotoCondensed-Bold",
+                                    fontSize: 15),
+                              )),
                         ),
-
                       ],
                     ),
-
                   ],
                 ),
-                SizedBox(height: 10,),
-
-
+                SizedBox(
+                  height: 10,
+                ),
               ],
             ),
             Container(
                 width: MediaQuery.of(context).size.width,
-                child: Image.asset("assets/image/add.png",)),
-            SizedBox(height: 10,),
+                child: Image.asset(
+                  "assets/image/add.png",
+                )),
+            SizedBox(
+              height: 10,
+            ),
             Column(
               children: [
-
-
                 Container(
                   padding: EdgeInsets.only(left: 17),
                   //for user block
@@ -728,7 +880,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Padding(
                       padding:
-                      const EdgeInsets.only(top: 10, bottom: 10, left: 40),
+                          const EdgeInsets.only(top: 10, bottom: 10, left: 40),
                       child: Image.asset(
                         "assets/icon/floor.png",
                         height: 20,
@@ -757,7 +909,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Padding(
                       padding:
-                      const EdgeInsets.only(top: 10, bottom: 10, left: 40),
+                          const EdgeInsets.only(top: 10, bottom: 10, left: 40),
                       child: Image.asset(
                         "assets/icon/paisa.png",
                         height: 22,
@@ -793,124 +945,200 @@ class _HomepageState extends State<Homepage> {
                     )),
 
                 Row(
-
                   children: [
                     Column(
-
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5,left: 25),
-                          child: Image.asset("assets/icon/home.png",height: 20,),
+                          padding: const EdgeInsets.only(
+                              top: 10, bottom: 5, left: 25),
+                          child: Image.asset(
+                            "assets/icon/home.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 10,left: 25,),
-                          child: Text("Smart Home",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                            left: 25,
+                          ),
+                          child: Text(
+                            "Smart Home",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/care.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/care.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Parking",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Parking",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/kidsplayarea.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/kidsplayarea.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Kids Play Area",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Kids Play Area",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/gatden.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/gatden.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Smart Home",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Smart Home",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-
-
-
                   ],
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
-
                   children: [
                     Column(
-
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5,left: 25),
-                          child: Image.asset("assets/icon/airconditon.png",height: 20,),
+                          padding: const EdgeInsets.only(
+                              top: 10, bottom: 5, left: 25),
+                          child: Image.asset(
+                            "assets/icon/airconditon.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 10,left: 25,),
-                          child: Text("Air Condtion",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                            left: 25,
+                          ),
+                          child: Text(
+                            "Air Condtion",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/gym.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/gym.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("GYM",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "GYM",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/home.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/home.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Modular Kitchen",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Modular Kitchen",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(width: 35,),
+                    SizedBox(
+                      width: 35,
+                    ),
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 5),
-                          child: Image.asset("assets/icon/jogging.png",height: 20,),
+                          padding: const EdgeInsets.only(top: 10, bottom: 5),
+                          child: Image.asset(
+                            "assets/icon/jogging.png",
+                            height: 20,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text("Jogging Track",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                          child: Text(
+                            "Jogging Track",
+                            style: TextStyle(
+                                fontFamily: "RobotoCondensed-Bold",
+                                fontSize: 10),
+                          ),
                         )
                       ],
                     ),
-
-
-
                   ],
                 ),
                 Container(
@@ -925,13 +1153,10 @@ class _HomepageState extends State<Homepage> {
                   children: [
                     Row(
                       children: [
-
-
                         Container(
                           width: 180,
                           height: 80,
                           padding: EdgeInsets.all(10),
-
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
@@ -940,27 +1165,40 @@ class _HomepageState extends State<Homepage> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 10,left: 10),
-                                  child: Image.asset("assets/icon/card.png",height: 15,),
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: Image.asset(
+                                    "assets/icon/card.png",
+                                    height: 15,
+                                  ),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
-
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10),
-                                      child: Text("Loan amount on property value",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 8),),
+                                      child: Text(
+                                        "Loan amount on property value",
+                                        style: TextStyle(
+                                            fontFamily:
+                                                "RobotoCondensed-Regular",
+                                            fontSize: 8),
+                                      ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 5,left: 10),
-                                      child: Text("₹. 80,00,000",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                                      padding: const EdgeInsets.only(
+                                          top: 5, left: 10),
+                                      child: Text(
+                                        "₹. 80,00,000",
+                                        style: TextStyle(
+                                            fontFamily: "RobotoCondensed-Bold",
+                                            fontSize: 10),
+                                      ),
                                     ),
                                   ],
                                 )
                               ],
-
-
                             ),
                           ),
                         ),
@@ -976,33 +1214,45 @@ class _HomepageState extends State<Homepage> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 10,left: 10),
-                                  child: Image.asset("assets/icon/card.png",height: 15,),
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: Image.asset(
+                                    "assets/icon/card.png",
+                                    height: 15,
+                                  ),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
-
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10),
-                                      child: Text("Loan amount on property value",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 8),),
+                                      child: Text(
+                                        "Loan amount on property value",
+                                        style: TextStyle(
+                                            fontFamily:
+                                                "RobotoCondensed-Regular",
+                                            fontSize: 8),
+                                      ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 5,left: 10),
-                                      child: Text("₹. 80,00,000",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                                      padding: const EdgeInsets.only(
+                                          top: 5, left: 10),
+                                      child: Text(
+                                        "₹. 80,00,000",
+                                        style: TextStyle(
+                                            fontFamily: "RobotoCondensed-Bold",
+                                            fontSize: 10),
+                                      ),
                                     ),
                                   ],
                                 )
                               ],
-
-
                             ),
                           ),
                         ),
                       ],
                     ),
-
                     Row(
                       children: [
                         Container(
@@ -1017,27 +1267,40 @@ class _HomepageState extends State<Homepage> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 10,left: 10),
-                                  child: Image.asset("assets/icon/card.png",height: 15,),
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: Image.asset(
+                                    "assets/icon/card.png",
+                                    height: 15,
+                                  ),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
-
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10),
-                                      child: Text("Loan amount on property value",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 8),),
+                                      child: Text(
+                                        "Loan amount on property value",
+                                        style: TextStyle(
+                                            fontFamily:
+                                                "RobotoCondensed-Regular",
+                                            fontSize: 8),
+                                      ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 5,left: 10),
-                                      child: Text("₹. 80,00,000",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                                      padding: const EdgeInsets.only(
+                                          top: 5, left: 10),
+                                      child: Text(
+                                        "₹. 80,00,000",
+                                        style: TextStyle(
+                                            fontFamily: "RobotoCondensed-Bold",
+                                            fontSize: 10),
+                                      ),
                                     ),
                                   ],
                                 )
                               ],
-
-
                             ),
                           ),
                         ),
@@ -1053,73 +1316,97 @@ class _HomepageState extends State<Homepage> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 10,left: 10),
-                                  child: Image.asset("assets/icon/card.png",height: 15,),
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  child: Image.asset(
+                                    "assets/icon/card.png",
+                                    height: 15,
+                                  ),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
-
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10),
-                                      child: Text("Loan amount on property value",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 8),),
+                                      child: Text(
+                                        "Loan amount on property value",
+                                        style: TextStyle(
+                                            fontFamily:
+                                                "RobotoCondensed-Regular",
+                                            fontSize: 8),
+                                      ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 5,left: 10),
-                                      child: Text("₹. 80,00,000",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
+                                      padding: const EdgeInsets.only(
+                                          top: 5, left: 10),
+                                      child: Text(
+                                        "₹. 80,00,000",
+                                        style: TextStyle(
+                                            fontFamily: "RobotoCondensed-Bold",
+                                            fontSize: 10),
+                                      ),
                                     ),
                                   ],
                                 )
                               ],
-
-
                             ),
                           ),
                         ),
                       ],
                     ),
-
                     Row(
                       children: [
-                        Container(padding: EdgeInsets.only(left: 20),
-                          child: RaisedButton(color: AppColors.darkblue,
-                              onPressed: (){},
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: RaisedButton(
+                              color: AppColors.darkblue,
+                              onPressed: () {},
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
-                              child: Text("      Loan Detail      ",
-                                style: TextStyle(color: Colors.white,fontFamily: "RobotoCondensed-Bold",fontSize: 15),)),
+                              child: Text(
+                                "      Loan Detail      ",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "RobotoCondensed-Bold",
+                                    fontSize: 15),
+                              )),
                         ),
-                        SizedBox(width: 20,),
-                        Container(padding: EdgeInsets.only(left: 20),
-                          child: RaisedButton(color: AppColors.darkblue,
-                              onPressed: (){},
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: RaisedButton(
+                              color: AppColors.darkblue,
+                              onPressed: () {},
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
-                              child: Text("      Loan Detail      ",
-                                style: TextStyle(color: Colors.white,fontFamily: "RobotoCondensed-Bold",fontSize: 15),)),
+                              child: Text(
+                                "      Loan Detail      ",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "RobotoCondensed-Bold",
+                                    fontSize: 15),
+                              )),
                         ),
-
-
                       ],
                     ),
-
                   ],
                 ),
-                SizedBox(height: 10,),
-
-
+                SizedBox(
+                  height: 10,
+                ),
               ],
             ),
             Container(
                 width: MediaQuery.of(context).size.width,
-                child: Image.asset("assets/image/add.png",)),
-
+                child: Image.asset(
+                  "assets/image/add.png",
+                )),
           ],
         ),
-
       ),
-
     );
   }
 }

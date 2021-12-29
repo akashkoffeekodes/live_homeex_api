@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
-import 'package:home_ex/resetpass.dart';
+import 'package:home_ex/user/resetpass.dart';
 
 class Forgetpass extends StatefulWidget {
   const Forgetpass({Key key}) : super(key: key);

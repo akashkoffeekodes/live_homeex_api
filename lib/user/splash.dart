@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
 
-import 'onboard.dart';
+import '../onboard.dart';
 
 class Splash extends StatefulWidget {
   Splash({Key key}) : super(key: key);

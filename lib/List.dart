@@ -17,6 +17,7 @@ class _ListviewState extends State<Listview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.darkblue,
         title: Text("Shortlisted.."),
       ),
       body: Container(

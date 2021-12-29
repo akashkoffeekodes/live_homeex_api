@@ -1,15 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:home_ex/login.dart';
-import 'package:home_ex/register.dart';
-import 'package:home_ex/resetpass.dart';
-import 'package:home_ex/splash.dart';
+import 'package:home_ex/user/login.dart';
+import 'package:home_ex/user/register.dart';
+import 'package:home_ex/user/resetpass.dart';
+import 'package:home_ex/user/splash.dart';
 import 'List.dart';
+import 'alert.dart';
 import 'dashboard.dart';
-import 'forgetpassword.dart';
+import 'filter.dart';
+import 'profile.dart';
+import 'user/forgetpassword.dart';
 import 'homepage.dart';
 import 'onboard.dart';
 import 'propertydetail.dart';
+import 'propertydetail2.dart';
 import 'salerent.dart';
 
 void main(){
@@ -22,7 +26,7 @@ class Home_ex extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home:  Propertydetail(),
+    home: Filter(),
     );
   }
 }

@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
 import 'package:home_ex/dashboard.dart';
-import 'package:home_ex/forgetpassword.dart';
-import 'package:home_ex/register.dart';
+import 'package:home_ex/user/forgetpassword.dart';
+import 'package:home_ex/user/register.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({Key key}) : super(key: key);

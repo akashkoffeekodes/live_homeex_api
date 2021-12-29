@@ -3,7 +3,7 @@ import 'package:home_ex/Appcolor.dart';
 import 'package:home_ex/dashboard.dart';
 import 'package:onboarding/onboarding.dart';
 
-import 'login.dart';
+import 'user/login.dart';
 
 class ONboard extends StatelessWidget {
 

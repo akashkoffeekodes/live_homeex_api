@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
+import 'salerent.dart';
 
 class Propertydetail extends StatefulWidget {
   const Propertydetail({Key key}) : super(key: key);
@@ -55,6 +56,7 @@ class _PropertydetailState extends State<Propertydetail> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 15),
+
                     child: Column(
                       children: [
                         Text(
@@ -573,33 +575,7 @@ class _PropertydetailState extends State<Propertydetail> {
                 children: [
                   Text("Name",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 15),),
                   SizedBox(height: 5,),
-                  TextFormField(
 
-                    style: TextStyle(
-                      fontSize: 10,
-                    ),
-
-                    decoration: InputDecoration(
-                      isDense: true,
-                      fillColor: AppColors.textfeild,
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide:
-                        BorderSide(color: Colors.blueGrey,),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide:
-                        BorderSide(color: Colors.blueGrey, ),
-                      ),
-
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.red),
-                      ),
-                      hintText: "Name",
-                    ),
-                  ),
 
 
                   SizedBox(height: 10,),
@@ -721,7 +697,12 @@ class _PropertydetailState extends State<Propertydetail> {
                     width: 320.0,
                     height:35,
                     child: RaisedButton(color: AppColors.darkblue,
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Salerent()),
+                          );
+                        },
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5)),
                         child: Text("  REEQUEST TO CALLBACK ",

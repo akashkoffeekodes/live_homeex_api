@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Appcolor.dart';
+import '../Appcolor.dart';
 
 class Register extends StatefulWidget {
   const Register({Key key}) : super(key: key);
