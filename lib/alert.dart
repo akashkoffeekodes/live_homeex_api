@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
+import 'package:home_ex/dashboard.dart';
 
 class Alert extends StatelessWidget {
   const Alert({Key key}) : super(key: key);
@@ -12,8 +13,15 @@ class Alert extends StatelessWidget {
         backgroundColor: AppColors.darkblue,
         leading: Container(
             padding: EdgeInsets.all(18),
-            child: Image.asset(
-              "assets/icon/backmenu.png",
+            child: InkWell(
+
+              onTap: (){
+                Navigator.pop(context);
+
+              },
+              child: Image.asset(
+                "assets/icon/backmenu.png",
+              ),
             )),
         title: Text("Alerts"),
       ),
@@ -70,8 +78,17 @@ class Alert2 extends StatelessWidget {
         backgroundColor: AppColors.darkblue,
         leading: Container(
             padding: EdgeInsets.all(18),
-            child: Image.asset(
-              "assets/icon/backmenu.png",
+            child: InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DashBoard()),
+                );
+              },
+
+              child: Image.asset(
+                "assets/icon/backmenu.png",
+              ),
             )),
         title: Text("Alerts"),
       ),

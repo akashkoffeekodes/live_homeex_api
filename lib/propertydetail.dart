@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
+import 'filter.dart';
 import 'salerent.dart';
 
 class Propertydetail extends StatefulWidget {
@@ -21,15 +22,32 @@ class _PropertydetailState extends State<Propertydetail> {
         icon: Container(
          height: 20,
           margin: EdgeInsets.only(right: 20),
-          child: ImageIcon(
-            AssetImage("assets/icon/backmenu.png",),
-            color: Colors.white,
+          child: InkWell(
+            onTap: (){
+
+
+              Navigator.pop(context);
+            },
+
+
+            child: ImageIcon(
+              AssetImage("assets/icon/backmenu.png",),
+              color: Colors.white,
+            ),
           ),
         ),
         onPressed: () {},
       ),
         actions: <Widget>[
-          Image.asset("assets/icon/like.png",width: 50,),
+          InkWell(
+              onTap: (){
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Filter()),
+                );
+              },
+              child: Image.asset("assets/icon/like.png",width: 50,)),
 
         ],
       ),

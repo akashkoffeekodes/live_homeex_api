@@ -20,7 +20,8 @@ class _RegisterState extends State<Register> {
   TextEditingController passwordController = new TextEditingController();
   TextEditingController mobileController = new TextEditingController();
 
-  bool click = false;
+  bool Click = false;
+  bool _hasBeenPressed = false;
 
 
 
@@ -229,10 +230,11 @@ class _RegisterState extends State<Register> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     RaisedButton(
-                      color: (click == true)?  AppColors.pink : AppColors.grey,
+                      color: _hasBeenPressed ? AppColors.grey : AppColors.grey,
                       onPressed: () {
+
                         setState(() {
-                          click = false;
+                          _hasBeenPressed = !_hasBeenPressed;
 
                         });
 
@@ -245,11 +247,11 @@ class _RegisterState extends State<Register> {
                       width: 20,
                     ),
                     RaisedButton(
-                      color: (click == false)? AppColors.grey : AppColors.pink   ,
+                      color: _hasBeenPressed ? AppColors.grey : AppColors.grey,
 
                       onPressed: () {
                         setState(() {
-                          click = true;
+                          _hasBeenPressed = !_hasBeenPressed;
                         });
 
                       },
@@ -262,10 +264,11 @@ class _RegisterState extends State<Register> {
                       width: 20,
                     ),
                     RaisedButton(
-                      color: (click == true)?  AppColors.grey : AppColors.pink,
+                      color: _hasBeenPressed ? AppColors.grey : AppColors.pink,
+
                       onPressed: () {
                         setState(() {
-                          click = false;
+                          _hasBeenPressed = !_hasBeenPressed;
                         });
 
                       },

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:home_ex/Appcolor.dart';
+import 'package:home_ex/legalservice.dart';
 import 'package:home_ex/user/drawerPage.dart';
 
 import 'user/login.dart';
@@ -31,7 +32,7 @@ class _HomepageState extends State<Homepage> {
             icon: Image.asset(
               "assets/icon/menu.png",
               height: 25,
-              width: 25,
+              width: 19,
             ),
             onPressed: () => Scaffold.of(context).openDrawer(),
 
@@ -43,7 +44,8 @@ class _HomepageState extends State<Homepage> {
           ),
           Image.asset(
             "assets/icon/aapbarlogo.png",
-            width: 120,
+            width: 109,
+            height: 29,
           ),
           SizedBox(width: 15),
           Expanded(
@@ -73,7 +75,7 @@ class _HomepageState extends State<Homepage> {
                         width: 10,
                       ),
                       ButtonTheme(
-                        height: 30,
+                        height: 25,
                         child: RaisedButton(
                           onPressed: () {},
                           color: Colors.white,
@@ -91,9 +93,15 @@ class _HomepageState extends State<Homepage> {
                         width: 15,
                       ),
                       ButtonTheme(
-                        height: 30,
+                        height: 25,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Legalservice()),
+                            );
+
+                          },
                           color: Colors.white,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5)),
@@ -109,7 +117,7 @@ class _HomepageState extends State<Homepage> {
                         width: 15,
                       ),
                       ButtonTheme(
-                        height: 30,
+                        height: 25,
                         child: RaisedButton(
                           onPressed: () {},
                           color: Colors.white,
@@ -297,7 +305,7 @@ class _HomepageState extends State<Homepage> {
                 ),
                 //text Amenities
                 Container(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.only(left: 30),
                     alignment: Alignment.topLeft,
                     child: Text(
                       "Amenities",
@@ -305,202 +313,208 @@ class _HomepageState extends State<Homepage> {
                           fontFamily: "RobotoCondensed-Bold", fontSize: 15),
                     )),
 
-                Row(
-                  children: [
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10, bottom: 5, left: 25),
-                          child: Image.asset(
-                            "assets/icon/home.png",
-                            height: 20,
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 10, bottom: 5, left: 25),
+                            child: Image.asset(
+                              "assets/icon/home.png",
+                              height: 20,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 10,
-                            left: 25,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 10,
+                              left: 25,
+                            ),
+                            child: Text(
+                              "Smart Home",
+                              style: TextStyle(
+                                  fontFamily: "RobotoCondensed-Bold",
+                                  fontSize: 10),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 35,
+                      ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 5),
+                            child: Image.asset(
+                              "assets/icon/care.png",
+                              height: 20,
+                            ),
                           ),
-                          child: Text(
-                            "Smart Home",
-                            style: TextStyle(
-                                fontFamily: "RobotoCondensed-Bold",
-                                fontSize: 10),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Text(
+                              "Parking",
+                              style: TextStyle(
+                                  fontFamily: "RobotoCondensed-Bold",
+                                  fontSize: 10),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 35,
+                      ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 5),
+                            child: Image.asset(
+                              "assets/icon/kidsplayarea.png",
+                              height: 20,
+                            ),
                           ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 35,
-                    ),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10, bottom: 5),
-                          child: Image.asset(
-                            "assets/icon/care.png",
-                            height: 20,
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Text(
+                              "Kids Play Area",
+                              style: TextStyle(
+                                  fontFamily: "RobotoCondensed-Bold",
+                                  fontSize: 10),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 35,
+                      ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 5),
+                            child: Image.asset(
+                              "assets/icon/gatden.png",
+                              height: 20,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Text(
-                            "Parking",
-                            style: TextStyle(
-                                fontFamily: "RobotoCondensed-Bold",
-                                fontSize: 10),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 35,
-                    ),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10, bottom: 5),
-                          child: Image.asset(
-                            "assets/icon/kidsplayarea.png",
-                            height: 20,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Text(
-                            "Kids Play Area",
-                            style: TextStyle(
-                                fontFamily: "RobotoCondensed-Bold",
-                                fontSize: 10),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 35,
-                    ),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10, bottom: 5),
-                          child: Image.asset(
-                            "assets/icon/gatden.png",
-                            height: 20,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Text(
-                            "Smart Home",
-                            style: TextStyle(
-                                fontFamily: "RobotoCondensed-Bold",
-                                fontSize: 10),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Text(
+                              "Smart Home",
+                              style: TextStyle(
+                                  fontFamily: "RobotoCondensed-Bold",
+                                  fontSize: 10),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Row(
-                  children: [
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10, bottom: 5, left: 25),
-                          child: Image.asset(
-                            "assets/icon/airconditon.png",
-                            height: 20,
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 10, bottom: 5, left: 25),
+                            child: Image.asset(
+                              "assets/icon/airconditon.png",
+                              height: 20,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 10,
-                            left: 25,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 10,
+                              left: 25,
+                            ),
+                            child: Text(
+                              "Air Condtion",
+                              style: TextStyle(
+                                  fontFamily: "RobotoCondensed-Bold",
+                                  fontSize: 10),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 35,
+                      ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 5),
+                            child: Image.asset(
+                              "assets/icon/gym.png",
+                              height: 20,
+                            ),
                           ),
-                          child: Text(
-                            "Air Condtion",
-                            style: TextStyle(
-                                fontFamily: "RobotoCondensed-Bold",
-                                fontSize: 10),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Text(
+                              "GYM",
+                              style: TextStyle(
+                                  fontFamily: "RobotoCondensed-Bold",
+                                  fontSize: 10),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 35,
+                      ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 5),
+                            child: Image.asset(
+                              "assets/icon/home.png",
+                              height: 20,
+                            ),
                           ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 35,
-                    ),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10, bottom: 5),
-                          child: Image.asset(
-                            "assets/icon/gym.png",
-                            height: 20,
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Text(
+                              "Modular Kitchen",
+                              style: TextStyle(
+                                  fontFamily: "RobotoCondensed-Bold",
+                                  fontSize: 10),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 35,
+                      ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 5),
+                            child: Image.asset(
+                              "assets/icon/jogging.png",
+                              height: 20,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Text(
-                            "GYM",
-                            style: TextStyle(
-                                fontFamily: "RobotoCondensed-Bold",
-                                fontSize: 10),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 35,
-                    ),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10, bottom: 5),
-                          child: Image.asset(
-                            "assets/icon/home.png",
-                            height: 20,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Text(
-                            "Modular Kitchen",
-                            style: TextStyle(
-                                fontFamily: "RobotoCondensed-Bold",
-                                fontSize: 10),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 35,
-                    ),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10, bottom: 5),
-                          child: Image.asset(
-                            "assets/icon/jogging.png",
-                            height: 20,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Text(
-                            "Jogging Track",
-                            style: TextStyle(
-                                fontFamily: "RobotoCondensed-Bold",
-                                fontSize: 10),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Text(
+                              "Jogging Track",
+                              style: TextStyle(
+                                  fontFamily: "RobotoCondensed-Bold",
+                                  fontSize: 10),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 Container(
                     padding: EdgeInsets.only(left: 20),
@@ -520,7 +534,7 @@ class _HomepageState extends State<Homepage> {
                           padding: EdgeInsets.all(10),
                           child: Card(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
                             elevation: 10,
                             child: Row(
@@ -569,7 +583,7 @@ class _HomepageState extends State<Homepage> {
                           padding: EdgeInsets.all(10),
                           child: Card(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
                             elevation: 10,
                             child: Row(
@@ -622,7 +636,7 @@ class _HomepageState extends State<Homepage> {
                           padding: EdgeInsets.all(10),
                           child: Card(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
                             elevation: 10,
                             child: Row(
@@ -671,7 +685,7 @@ class _HomepageState extends State<Homepage> {
                           padding: EdgeInsets.all(10),
                           child: Card(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
                             elevation: 10,
                             child: Row(

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Appcolor.dart';
@@ -413,7 +414,7 @@ class _FilterState extends State<Filter> {
 
               SizedBox(height: 10,),
               Container(
-                padding: EdgeInsets.only(top: 10,left: 20,bottom: 10),
+                padding: EdgeInsets.only(top: 10,left: 10,bottom: 10),
                 alignment: Alignment.topLeft,
                 child: Text("Availability", style: TextStyle(
                     fontFamily: "RobotoCondensed-Bold", fontSize: 12),
@@ -434,12 +435,12 @@ class _FilterState extends State<Filter> {
                         contentPadding: EdgeInsets.fromLTRB(20.0,0, 20.0,0 ),
                         fillColor: AppColors.textfeild,
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(5),
                           borderSide:
                           BorderSide(color: Colors.blueGrey,),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(5),
                           borderSide:
                           BorderSide(color: Colors.blueGrey, ),
                         ),
@@ -461,12 +462,12 @@ class _FilterState extends State<Filter> {
                         contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
                         fillColor: AppColors.textfeild,
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(5),
                           borderSide:
                           BorderSide(color: Colors.blueGrey,),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(5),
                           borderSide:
                           BorderSide(color: Colors.blueGrey, ),
                         ),
@@ -518,7 +519,7 @@ class _FilterState extends State<Filter> {
                           Container(
 
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(5),
                                 border: Border.all(width: 0.1,color: Colors.grey)
                             ),
                             child: DropdownButtonFormField(
@@ -660,7 +661,7 @@ class _FilterState extends State<Filter> {
 
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 10,bottom: 5,left: 25),
+                        padding: const EdgeInsets.only(top: 10,bottom: 5,left: 15),
                         child: Image.asset("assets/icon/Bhome.png",height: 44,width: 44,),
                       ),
                       Padding(
@@ -715,19 +716,16 @@ class _FilterState extends State<Filter> {
               ),
 
               Row(
-
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
 
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 10,bottom: 5,left: 25),
+                        padding: const EdgeInsets.only(top: 10,bottom: 5,left: 15),
                         child: Image.asset("assets/icon/Ggym.png",height: 44,width: 44,),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10,left: 25,),
-                        child: Text("Gym",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
-                      )
+                      Text("Gym",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),)
                     ],
                   ),
                   SizedBox(width: 35,),
@@ -737,10 +735,7 @@ class _FilterState extends State<Filter> {
                         padding: const EdgeInsets.only(top: 10,bottom: 5),
                         child: Image.asset("assets/icon/Gmodular.png",height: 44,width: 44,),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Text("Modular Kitchen",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
-                      )
+                      Text("Modular Kitchen",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),)
                     ],
                   ),
                   SizedBox(width: 35,),
@@ -750,10 +745,7 @@ class _FilterState extends State<Filter> {
                         padding: const EdgeInsets.only(top: 10,bottom: 5),
                         child: Image.asset("assets/icon/Gjogger.png",height: 44,width: 44,),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Text("Jogges",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
-                      )
+                      Text("Jogges",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),)
                     ],
                   ),
                   SizedBox(width: 35,),
@@ -763,17 +755,186 @@ class _FilterState extends State<Filter> {
                         padding: const EdgeInsets.only(top: 10,bottom: 5),
                         child: Image.asset("assets/icon/Gair.png",height: 44,width: 44,),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Text("Air Condition",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),),
-                      )
+                      Text("Air Condition",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 10),)
                     ],
                   ),
                 ],
               ),
 
 
-              Image.asset("assets/icon/price.png",height: 374,),
+                      SizedBox(height: 15),
+                  Container(alignment: Alignment.topLeft,
+                    padding: EdgeInsets.only(left: 15),
+                    child: Text("Area",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12
+                          ),),
+                  ),
+              SizedBox(height: 10),
+              Image.asset("assets/icon/price.png",width: 374,),
+
+
+              Row(
+
+                children: [
+                  Expanded(child: Padding(
+                    padding: const EdgeInsets.only(top:8 ,bottom:8 ,right:8 ,left:10 ),
+                    child: Column(
+                      children: [
+                        TextFormField(
+
+                          style: TextStyle(
+                            fontSize: 10,
+                          ),
+
+                          decoration: InputDecoration(
+                              contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+                              fillColor: AppColors.textfeild,
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),
+                                borderSide:
+                                BorderSide(color: Colors.blueGrey,),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5),
+                                borderSide:
+                                BorderSide(color: Colors.blueGrey, ),
+                              ),
+
+
+                              hintText: "00 Sq.ft",hintStyle: TextStyle(fontFamily: "RobotoCondensed-Bold,",fontSize: 10,color: Colors.black)                       ),
+                        ),
+                      ],
+                    ),
+                  ),),
+                  Expanded(child: Padding(
+                    padding: const EdgeInsets.only(top:8 ,bottom:8 ,right:10 ,left:10 ),
+                    child: Column(
+
+                      children: [
+                        TextFormField(
+
+                          style: TextStyle(
+                            fontSize: 10,
+                          ),
+
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+                            fillColor: AppColors.textfeild,
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              borderSide:
+                              BorderSide(color: Colors.blueGrey,),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              borderSide:
+                              BorderSide(color: Colors.blueGrey, ),
+                            ),
+
+
+                            hintText: "450 Sq.ft",hintStyle: TextStyle(fontFamily: "RobotoCondensed-Bold",color: Colors.black),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),)
+                ],
+              ),
+
+
+              Container(
+                padding: EdgeInsets.only(top: 10,left: 10,bottom: 10),
+                alignment: Alignment.topLeft,
+                child: Text("Furnishing status", style: TextStyle(
+                    fontFamily: "RobotoCondensed-Bold", fontSize: 12),
+                ),
+              ),
+
+              Row(
+
+                children: [
+                  Expanded(child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: TextFormField(
+
+                      style: TextStyle(
+                        fontSize: 10,
+                      ),
+
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.fromLTRB(10.0, 8.0, 10.0, 8.0),
+                        fillColor: AppColors.textfeild,
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                          borderSide:
+                          BorderSide(color: Colors.blueGrey,),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                          borderSide:
+                          BorderSide(color: Colors.blueGrey, ),
+                        ),
+
+
+                        hintText: "Semi Furnishing",
+                      ),
+                    ),
+                  ),),
+                  Expanded(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+
+                      style: TextStyle(
+                        fontSize: 10,
+                      ),
+
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.fromLTRB(10.0, 8.0, 10.0, 8.0),
+                        fillColor: AppColors.textfeild,
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                          borderSide:
+                          BorderSide(color: Colors.blueGrey,),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                          borderSide:
+                          BorderSide(color: Colors.blueGrey, ),
+                        ),
+
+
+                        hintText: "Unfurnishing ",
+                      ),
+                    ),
+                  ),),
+                  Expanded(child: Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: TextFormField(
+
+                      style: TextStyle(
+                        fontSize: 10,
+                      ),
+
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.fromLTRB(10.0, 8.0, 10.0, 8.0),
+                        fillColor: AppColors.textfeild,
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                          borderSide:
+                          BorderSide(color: Colors.blueGrey,),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide:
+                          BorderSide(color: Colors.blueGrey, ),
+                        ),
+
+
+                        hintText: "Full Furnishing ",
+                      ),
+                    ),
+                  ),),
+                ],
+              ),
 
 
             ],

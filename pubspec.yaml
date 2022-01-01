@@ -38,6 +38,8 @@ dependencies:
   introduction_screen: ^1.0.9
   solid_bottom_sheet: ^0.1.10
   image_picker: ^0.6.6+5
+  expandable: ^5.0.1
+  im_stepper: ^0.1.3
 
 
 

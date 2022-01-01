@@ -5,6 +5,7 @@ import 'package:home_ex/Appcolor.dart';
 import 'package:home_ex/alert.dart';
 import 'List.dart';
 import 'homepage.dart';
+import 'loaneligibi.dart';
 import 'profile.dart';
 
 class DashBoard extends StatefulWidget {
@@ -73,11 +74,19 @@ class _DashBoardState extends State<DashBoard> {
                   SizedBox(width: 10,),
                   Expanded(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  Eligibility()),
+                        );
+                      },
                       child: Container(
 
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(5),
 
                               color: AppColors
                                   .darkblue // green as background color
@@ -98,7 +107,7 @@ class _DashBoardState extends State<DashBoard> {
                       onTap: () {},
                       child: Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(5),
                               // radius of 10
                               color: AppColors
                                   .darkblue // green as background color
@@ -121,7 +130,7 @@ class _DashBoardState extends State<DashBoard> {
                       onTap: () {},
                       child: Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(5),
                               // radius of 10
                               color: AppColors
                                   .darkblue // green as background color
@@ -229,17 +238,12 @@ class _DashBoardState extends State<DashBoard> {
 
    _showModalBottomSheet() {
      showModalBottomSheet(
+       shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20))),
        context: context,
        builder: (context) {
          return Container(
 
             decoration: BoxDecoration(
-
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(50.0),
-                topLeft: Radius.circular(50.0),
-
-              ),
               color: AppColors.bottomsheet,
             ),
 
@@ -279,7 +283,7 @@ class _DashBoardState extends State<DashBoard> {
                    Column(crossAxisAlignment: CrossAxisAlignment.start,
 
                      children: [
-                       Text("Save",style: TextStyle(fontSize: 14,fontFamily: "RobotoCondensed-Bold",color: Colors.black),),
+                       Text("Share Via",style: TextStyle(fontSize: 14,fontFamily: "RobotoCondensed-Bold",color: Colors.black),),
                        Text("Share this file",style: TextStyle(fontSize: 10,fontFamily: "RobotoCondensed-Regular",color: Colors.black),)
                      ],
                    ),
@@ -298,7 +302,7 @@ class _DashBoardState extends State<DashBoard> {
                    Column(crossAxisAlignment: CrossAxisAlignment.start,
 
                      children: [
-                       Text("Save",style: TextStyle(fontSize: 14,fontFamily: "RobotoCondensed-Bold",color: Colors.black),),
+                       Text("Copy link",style: TextStyle(fontSize: 14,fontFamily: "RobotoCondensed-Bold",color: Colors.black),),
 
                      ],
                    ),
@@ -311,13 +315,13 @@ class _DashBoardState extends State<DashBoard> {
                  children: [
                    Padding(
                      padding: const EdgeInsets.only(left: 40),
-                     child: Image.asset("assets/icon/Vector.png",height: 30,width: 30,),
+                     child: Image.asset("assets/icon/vector.png",height: 30,width: 30,),
                    ),
                    SizedBox(width: 20,),
                    Column(crossAxisAlignment: CrossAxisAlignment.start,
 
                      children: [
-                       Text("Save",style: TextStyle(fontSize: 14,fontFamily: "RobotoCondensed-Bold",color: Colors.black),),
+                       Text("Similar property",style: TextStyle(fontSize: 14,fontFamily: "RobotoCondensed-Bold",color: Colors.black),),
 
                      ],
                    ),

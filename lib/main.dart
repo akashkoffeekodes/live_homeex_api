@@ -7,8 +7,13 @@ import 'package:home_ex/user/splash.dart';
 import 'List.dart';
 import 'alert.dart';
 import 'dashboard.dart';
+import 'emicalculator.dart';
 import 'filter.dart';
+import 'legalservice.dart';
+import 'loaneligibi.dart';
 import 'profile.dart';
+import 'stepper.dart';
+import 'user/drawerPage.dart';
 import 'user/forgetpassword.dart';
 import 'homepage.dart';
 import 'onboard.dart';
@@ -26,7 +31,7 @@ class Home_ex extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home: Filter(),
+    home:  EMIcal(),
     );
   }
 }
