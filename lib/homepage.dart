@@ -5,6 +5,9 @@ import 'package:home_ex/Appcolor.dart';
 import 'package:home_ex/legalservice.dart';
 import 'package:home_ex/user/drawerPage.dart';
 
+import 'balance.dart';
+import 'emicalculator.dart';
+import 'loaneligibi.dart';
 import 'user/login.dart';
 import 'user/register.dart';
 
@@ -60,6 +63,102 @@ class _HomepageState extends State<Homepage> {
           ),
           SizedBox(width: 15),
         ],
+      ),
+      bottomNavigationBar:  Container(
+        child: Row(
+          children: [
+            SizedBox(width: 10,),
+            Expanded(
+              child: InkWell(
+                onTap: () {
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            Eligibility()),
+                  );
+                },
+                child: Container(
+
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+
+                        color: AppColors
+                            .darkblue // green as background color
+                    ),
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    alignment: Alignment.topLeft,
+                    height: 30,
+                    child: Text("LOAN ELIGIBILITY",
+                        style: TextStyle(
+                            fontFamily: "RobotoCondensed-Bold",
+                            fontSize: 10,
+                            color: Colors.white))),
+              ),
+            ),
+            Expanded(
+              child: InkWell(
+                onTap: () {
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EMIcal()),
+                  );
+                },
+                child: Container(
+
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        // radius of 10
+                        color: AppColors
+                            .darkblue // green as background color
+                    ),
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    alignment: Alignment.topLeft,
+                    height: 30,
+                    child: Text(
+                      "EMI CALCULATOR",
+                      style: TextStyle(
+                          fontFamily: "RobotoCondensed-Bold",
+                          fontSize: 10,
+                          color: Colors.white),
+                    )),
+              ),
+            ),
+            Expanded(
+              child: InkWell(
+                onTap: () {
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Balance()),
+                  );
+
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        // radius of 10
+                        color: AppColors
+                            .darkblue // green as background color
+                    ),
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    alignment: Alignment.topLeft,
+                    height: 30,
+                    child: Text("BALANCE TRANSFE",
+                        style: TextStyle(
+                            fontFamily: "RobotoCondensed-Bold",
+                            fontSize:9,
+                            color: Colors.white))),
+              ),
+            ),
+            SizedBox(width: 10,),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(

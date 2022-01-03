@@ -17,6 +17,8 @@ class Salerent extends StatefulWidget {
 class _SalerentState extends State<Salerent> {
   int _value;
   bool checkedValue = true;
+  var selected;
+  List categories = ['Sale', 'Rent', 'Farmhouse','Auction' ];
   @override
   Widget build(BuildContext context) {
 
@@ -87,54 +89,104 @@ class _SalerentState extends State<Salerent> {
                   SizedBox(height: 10,),
 
                   Container(
-                  padding: EdgeInsets.only(left: 20,right: 20),
+                  padding: EdgeInsets.only(left: 30),
                                   child: Row(
                     children: [
+                      SizedBox(height: 10,),
+                      Container(
+                        height: MediaQuery.of(context).size.height*0.05,
 
-                      Expanded(
-                        child: RaisedButton(
+                        child: ListView.builder(
 
-                            color: AppColors.pink,
-                            onPressed: (){},
-                            shape: RoundedRectangleBorder(
+                            scrollDirection: Axis.horizontal,
+                            shrinkWrap: true,
+                            itemCount: categories.length,
+                            itemBuilder: (context, index) {
+                              return Container(
+                               
 
-                                borderRadius: BorderRadius.circular(1)),
-                            child: Text("sale",
-                              style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                                child: ElevatedButton(
+
+                                  style: ButtonStyle(
+
+
+                                    backgroundColor: MaterialStateProperty.all<Color>(
+                                        selected == categories[index]
+                                            ? AppColors.pink
+                                            : Colors.white),
+
+                                  ),
+                                  child: Text(
+                                    categories[index],
+                                    style: TextStyle(
+                                        fontFamily: "RobotoCondensed-Bold",
+                                        color: selected == categories[index]
+                                            ?AppColors.grey
+                                            : Colors.grey,
+                                        fontSize: 12),
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      selected = categories[index];
+                                    });
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) => ()));
+                                  },
+                                ),
+                              );
+                            }),
+
+
                       ),
-                      Expanded(
-                        child: RaisedButton(
 
-                            color: Colors.white,
-                            onPressed: (){},
-                            shape: RoundedRectangleBorder(
 
-                                borderRadius: BorderRadius.circular(1)),
-                            child: Text("Rent",
-                              style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12,),)),
-                      ),
-                      Expanded(
-                        child: RaisedButton(
-
-                            color: Colors.white,
-                            onPressed: (){},
-                            shape: RoundedRectangleBorder(
-
-                                borderRadius: BorderRadius.circular(1)),
-                            child: Text("Farmhous",
-                              style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
-                      ),
-                      Expanded(
-                        child: RaisedButton(
-
-                            color: Colors.white,
-                            onPressed: (){},
-                            shape: RoundedRectangleBorder(
-
-                                borderRadius: BorderRadius.circular(1)),
-                            child: Text("Auction",
-                              style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
-                      ),
+                      //
+                      // Expanded(
+                      //   child: RaisedButton(
+                      //
+                      //       color: AppColors.pink,
+                      //       onPressed: (){},
+                      //       shape: RoundedRectangleBorder(
+                      //
+                      //           borderRadius: BorderRadius.circular(1)),
+                      //       child: Text("sale",
+                      //         style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                      // ),
+                      // Expanded(
+                      //   child: RaisedButton(
+                      //
+                      //       color: Colors.white,
+                      //       onPressed: (){},
+                      //       shape: RoundedRectangleBorder(
+                      //
+                      //           borderRadius: BorderRadius.circular(1)),
+                      //       child: Text("Rent",
+                      //         style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12,),)),
+                      // ),
+                      // Expanded(
+                      //   child: RaisedButton(
+                      //
+                      //       color: Colors.white,
+                      //       onPressed: (){},
+                      //       shape: RoundedRectangleBorder(
+                      //
+                      //           borderRadius: BorderRadius.circular(1)),
+                      //       child: Text("Farmhous",
+                      //         style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                      // ),
+                      // Expanded(
+                      //   child: RaisedButton(
+                      //
+                      //       color: Colors.white,
+                      //       onPressed: (){},
+                      //       shape: RoundedRectangleBorder(
+                      //
+                      //           borderRadius: BorderRadius.circular(1)),
+                      //       child: Text("Auction",
+                      //         style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                      // ),
 
                     ],
                   ),),

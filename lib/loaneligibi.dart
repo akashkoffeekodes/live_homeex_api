@@ -19,8 +19,15 @@ class _EligibilityState extends State<Eligibility> {
         backgroundColor: AppColors.darkblue,
         leading: Padding(
           padding: const EdgeInsets.fromLTRB(0, 15, 0, 15),
-          child: Image.asset(
-            "assets/icon/backmenu.png",
+          child: InkWell(
+
+            onTap: (){
+              Navigator.pop(context);
+
+            },
+            child: Image.asset(
+              "assets/icon/backmenu.png",
+            ),
           ),
         ),
         title: Text(

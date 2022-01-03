@@ -6,10 +6,12 @@ import 'package:home_ex/user/resetpass.dart';
 import 'package:home_ex/user/splash.dart';
 import 'List.dart';
 import 'alert.dart';
+import 'balance.dart';
 import 'dashboard.dart';
 import 'emicalculator.dart';
 import 'filter.dart';
 import 'legalservice.dart';
+import 'loandetail.dart';
 import 'loaneligibi.dart';
 import 'profile.dart';
 import 'stepper.dart';
@@ -31,7 +33,7 @@ class Home_ex extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home:  EMIcal(),
+    home:  LoanDetail(),
     );
   }
 }

@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
 import 'package:home_ex/alert.dart';
+import 'package:home_ex/balance.dart';
 import 'List.dart';
+import 'emicalculator.dart';
 import 'homepage.dart';
 import 'loaneligibi.dart';
 import 'profile.dart';
@@ -14,35 +16,9 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
-  void _show(BuildContext ctx) {
-    showModalBottomSheet(
-        isScrollControlled: true,
-        elevation: 5,
-        context: ctx,
-        builder: (ctx) => Padding(
-              padding: EdgeInsets.all(15),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextField(
-                    keyboardType: TextInputType.name,
-                    decoration: InputDecoration(labelText: 'Name'),
-                  ),
-                  TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(labelText: 'Age'),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  ElevatedButton(onPressed: () {}, child: Text('Submit'))
-                ],
-              ),
-            ));
-  }
 
 
+bool isvisible = true;
 
   @override
   int _currentIndex = 0;
@@ -69,86 +45,7 @@ class _DashBoardState extends State<DashBoard> {
                 topRight: Radius.circular(20),
                 topLeft: Radius.circular(20),
               ),
-              child: Row(
-                children: [
-                  SizedBox(width: 10,),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
 
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  Eligibility()),
-                        );
-                      },
-                      child: Container(
-
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-
-                              color: AppColors
-                                  .darkblue // green as background color
-                              ),
-                          margin: EdgeInsets.all(10),
-                          padding: EdgeInsets.all(10),
-                          alignment: Alignment.topLeft,
-                          height: 30,
-                          child: Text("LOAN ELIGIBILITY",
-                              style: TextStyle(
-                                  fontFamily: "RobotoCondensed-Bold",
-                                  fontSize: 10,
-                                  color: Colors.white))),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              // radius of 10
-                              color: AppColors
-                                  .darkblue // green as background color
-                              ),
-                          margin: EdgeInsets.all(10),
-                          padding: EdgeInsets.all(10),
-                          alignment: Alignment.topLeft,
-                          height: 30,
-                          child: Text(
-                            "EMI CALCULATOR",
-                            style: TextStyle(
-                                fontFamily: "RobotoCondensed-Bold",
-                                fontSize: 10,
-                                color: Colors.white),
-                          )),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              // radius of 10
-                              color: AppColors
-                                  .darkblue // green as background color
-                              ),
-                          margin: EdgeInsets.all(10),
-                          padding: EdgeInsets.all(10),
-                          alignment: Alignment.topLeft,
-                          height: 30,
-                          child: Text("BALANCE TRANSFE",
-                              style: TextStyle(
-                                  fontFamily: "RobotoCondensed-Bold",
-                                  fontSize:9,
-                                  color: Colors.white))),
-                    ),
-                  ),
-                  SizedBox(width: 10,),
-                ],
-              ),
             ),
             ClipRRect(
               borderRadius: const BorderRadius.only(
@@ -238,12 +135,13 @@ class _DashBoardState extends State<DashBoard> {
 
    _showModalBottomSheet() {
      showModalBottomSheet(
-       shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20))),
+       shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(40),topLeft: Radius.circular(40))),
        context: context,
        builder: (context) {
          return Container(
 
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(topRight: Radius.circular(40),topLeft: Radius.circular(40)),
               color: AppColors.bottomsheet,
             ),
 

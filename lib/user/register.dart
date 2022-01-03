@@ -22,7 +22,8 @@ class _RegisterState extends State<Register> {
 
   bool Click = false;
   bool _hasBeenPressed = false;
-
+var selected;
+  List categories = ['Agent', 'Owner', 'Builder', ];
 
 
   @override
@@ -224,61 +225,83 @@ class _RegisterState extends State<Register> {
                 SizedBox(
                   height: 10,
                 ),
-                //button of
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    RaisedButton(
-                      color: _hasBeenPressed ? AppColors.grey : AppColors.grey,
-                      onPressed: () {
+                //button
+                // of
 
-                        setState(() {
-                          _hasBeenPressed = !_hasBeenPressed;
 
-                        });
 
-                      },
 
-                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                      child: Text("Agent"),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    RaisedButton(
-                      color: _hasBeenPressed ? AppColors.grey : AppColors.grey,
+                SizedBox(height: 10,),
+                Container(
+                  height: MediaQuery.of(context).size.height*0.05,
 
-                      onPressed: () {
-                        setState(() {
-                          _hasBeenPressed = !_hasBeenPressed;
-                        });
 
-                      },
-                      //color: AppColors.pink,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text("Owner"),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    RaisedButton(
-                      color: _hasBeenPressed ? AppColors.grey : AppColors.pink,
 
-                      onPressed: () {
-                        setState(() {
-                          _hasBeenPressed = !_hasBeenPressed;
-                        });
 
-                      },
-                     // color: AppColors.pink,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text("Builder"),
-                    ),
-                  ],
+                  child: ListView.builder(
+
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: categories.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          padding: EdgeInsets.only(left: 15,right: 5),
+
+                          child: ElevatedButton(
+
+                            style: ButtonStyle(
+
+
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  selected == categories[index]
+                                      ? AppColors.pink
+                                      : AppColors.grey),
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  side: BorderSide(color: AppColors.grey),
+                                  borderRadius: BorderRadius.circular(1.0),
+                                ),
+                              ),
+                            ),
+                            child: Text(
+                              categories[index],
+                              style: TextStyle(
+                                  fontFamily: "RobotoCondensed-Bold",
+                                  color: selected == categories[index]
+                                      ?Colors.black
+                                      : Colors.black,
+                                  fontSize: 12),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                selected = categories[index];
+                              });
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) => ()));
+                            },
+                          ),
+                        );
+                      }),
+
+
                 ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 Container(
                     alignment: Alignment.topLeft,
                     child: CheckboxListTile(
