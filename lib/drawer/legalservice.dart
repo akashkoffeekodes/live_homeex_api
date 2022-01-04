@@ -1,8 +1,8 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'Appcolor.dart';
-import 'appliedservices.dart';
+import '../Appcolor.dart';
+import '../appliedservices.dart';
 
 class Legalservice extends StatefulWidget {
   const Legalservice({Key key}) : super(key: key);

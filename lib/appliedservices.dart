@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Appcolor.dart';
 import 'dashboard.dart';
-import 'stepper.dart';
+import 'drawer/stepper.dart';
 
 class Appliedservice extends StatelessWidget {
   const Appliedservice({Key key}) : super(key: key);

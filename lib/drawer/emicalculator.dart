@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Appcolor.dart';
+import '../Appcolor.dart';
 
 class EMIcal extends StatefulWidget {
   const EMIcal({Key key}) : super(key: key);

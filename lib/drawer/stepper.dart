@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Appcolor.dart';
-import 'dashboard.dart';
+import '../Appcolor.dart';
+import '../dashboard.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);

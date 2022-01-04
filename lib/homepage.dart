@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:home_ex/Appcolor.dart';
-import 'package:home_ex/legalservice.dart';
-import 'package:home_ex/user/drawerPage.dart';
+import 'package:home_ex/drawer/legalservice.dart';
+import 'package:home_ex/drawer/drawerPage.dart';
 
-import 'balance.dart';
-import 'emicalculator.dart';
-import 'loaneligibi.dart';
+import 'applyloan.dart';
+import 'drawer/balance.dart';
+import 'drawer/emicalculator.dart';
+import 'drawer/loaneligibi.dart';
 import 'user/login.dart';
 import 'user/register.dart';
 
@@ -53,7 +54,12 @@ class _HomepageState extends State<Homepage> {
           SizedBox(width: 15),
           Expanded(
             child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Applyloan()),
+                  );
+                },
                 child: Container(
                   height: 20,
                   child: Image.asset(

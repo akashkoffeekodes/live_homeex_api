@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Appcolor.dart';
-import 'dashboard.dart';
+import '../Appcolor.dart';
+import '../dashboard.dart';
 
 class Eligibility extends StatefulWidget {
   const Eligibility({Key key}) : super(key: key);

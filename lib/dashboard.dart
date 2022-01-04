@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
 import 'package:home_ex/alert.dart';
-import 'package:home_ex/balance.dart';
+import 'package:home_ex/drawer/balance.dart';
 import 'List.dart';
-import 'emicalculator.dart';
+import 'drawer/emicalculator.dart';
 import 'homepage.dart';
-import 'loaneligibi.dart';
-import 'profile.dart';
+import 'drawer/loaneligibi.dart';
+import 'user/profile.dart';
 
 class DashBoard extends StatefulWidget {
   @override

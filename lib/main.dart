@@ -6,16 +6,18 @@ import 'package:home_ex/user/resetpass.dart';
 import 'package:home_ex/user/splash.dart';
 import 'List.dart';
 import 'alert.dart';
-import 'balance.dart';
+import 'appliedservices.dart';
+import 'applyloan.dart';
+import 'drawer/balance.dart';
 import 'dashboard.dart';
-import 'emicalculator.dart';
+import 'drawer/emicalculator.dart';
 import 'filter.dart';
-import 'legalservice.dart';
+import 'drawer/legalservice.dart';
 import 'loandetail.dart';
-import 'loaneligibi.dart';
-import 'profile.dart';
-import 'stepper.dart';
-import 'user/drawerPage.dart';
+import 'drawer/loaneligibi.dart';
+import 'user/profile.dart';
+import 'drawer/stepper.dart';
+import 'drawer/drawerPage.dart';
 import 'user/forgetpassword.dart';
 import 'homepage.dart';
 import 'onboard.dart';
@@ -33,7 +35,7 @@ class Home_ex extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home:  LoanDetail(),
+    home:  Splash(),
     );
   }
 }

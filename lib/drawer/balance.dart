@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'Appcolor.dart';
+import '../Appcolor.dart';
+import '../loandetail.dart';
 
 class Balance extends StatefulWidget {
   const Balance({Key key}) : super(key: key);
@@ -568,7 +569,7 @@ body: Padding(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Balance2()),
+                    MaterialPageRoute(builder: (context) => LoanDetail()),
                   );
                 },
                 shape: RoundedRectangleBorder(
