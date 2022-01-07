@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:home_ex/user/login.dart';
 
 import '../Appcolor.dart';
+import '../dashboard.dart';
 
 class Register extends StatefulWidget {
   const Register({Key key}) : super(key: key);
@@ -141,6 +143,7 @@ var selected;
                   child: TextFormField(
                     controller: mobileController,
                     validator: validatemobile,
+                    keyboardType: TextInputType.number,
                     style: TextStyle(
                       fontSize: 10,
                     ),
@@ -330,7 +333,11 @@ var selected;
                   padding: EdgeInsets.only(right: 40, left: 40),
                   child: RaisedButton(
                     onPressed: () {
-                      if (key.currentState.validate()) ;
+                      if (key.currentState.validate()) {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Loginpage()),);
+
+                      }
+
                     },
                     color: AppColors.pink,
                     shape: RoundedRectangleBorder(
@@ -375,14 +382,11 @@ String validatename(String value) {
 
 String validatemobile(String value) {
   if (value.isEmpty) {
-    return "Enter your email-id";
+    return "Enter your Mobile";
   }
-  Pattern pattern = "0123456789";
-  RegExp regex = RegExp(pattern);
-  if (!regex.hasMatch(value)) {
-    return 'Enter valid Mobile num';
+  if (value.length < 10) {
+    return 'Enter valid number';
   }
-
   return null;
 }
 
@@ -390,7 +394,7 @@ String validateemail(String value) {
   if (value.isEmpty) {
     return "Enter your email-id";
   }
-  Pattern pattern = "@";
+  Pattern pattern = "@gmail.com";
   RegExp regex = RegExp(pattern);
   if (!regex.hasMatch(value)) {
     return 'Enter valid email-id';

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
+import 'package:home_ex/myloan.dart';
 
+import '../appliedservices.dart';
 import 'editprofile.dart';
 
 class Profilepage extends StatefulWidget {
@@ -99,7 +101,10 @@ class _ProfilepageState extends State<Profilepage> {
                           MaterialPageRoute(builder: (context) => Editprofilt()),
                         );
                       },
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(30),
+                          topLeft: Radius.circular(30),
+                        )),
 
                       child: Row(
                         children: [
@@ -127,7 +132,13 @@ class _ProfilepageState extends State<Profilepage> {
                   height: 50.0,
                   child: RaisedButton(
                       color: Colors.white,
-                      onPressed: () {},
+                      onPressed: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => ()),
+                        // );
+
+                      },
                       //  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
 
                       child: Row(
@@ -185,7 +196,13 @@ class _ProfilepageState extends State<Profilepage> {
                   height: 50.0,
                   child: RaisedButton(
                       color: Colors.white,
-                      onPressed: () {},
+                      onPressed: () {
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Myloan()),
+                        );
+                      },
                       //  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
 
                       child: Row(
@@ -214,7 +231,12 @@ class _ProfilepageState extends State<Profilepage> {
                   height: 50.0,
                   child: RaisedButton(
                       color: Colors.white,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Appliedservice()),
+                        );
+                      },
                       //  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
 
                       child: Row(

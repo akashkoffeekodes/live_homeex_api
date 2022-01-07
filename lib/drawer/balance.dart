@@ -38,9 +38,9 @@ class _BalanceState extends State<Balance> {
               color: Colors.white),
         ),
       ),
-    body: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: SingleChildScrollView(
+    body: SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
 
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -418,7 +418,7 @@ SizedBox(height: 10,),
               ),
             ),
             SizedBox(height: 15,),
-      Padding(
+        Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
           alignment: Alignment.center,
@@ -444,8 +444,8 @@ SizedBox(height: 10,),
                 )),
           ),
         ),
-      )
-      )
+        )
+        )
           ],
         ),
       ),

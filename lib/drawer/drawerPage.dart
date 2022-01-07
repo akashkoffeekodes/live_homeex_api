@@ -4,7 +4,8 @@ import 'package:home_ex/Appcolor.dart';
 import 'package:home_ex/user/login.dart';
 import 'package:home_ex/user/register.dart';
 
-import '../applyloan.dart';
+import 'applyloan.dart';
+import '../myloan.dart';
 import 'balance.dart';
 import 'legalservice.dart';
 import 'loaneligibi.dart';
@@ -231,7 +232,7 @@ class _drawerPageState extends State<drawerPage> {
                 setIndex(0);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Loginpage()),
+                  MaterialPageRoute(builder: (context) => Myloan()),
                 );
               },
             ),

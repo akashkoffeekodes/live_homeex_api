@@ -8,6 +8,7 @@ import 'List.dart';
 import 'drawer/emicalculator.dart';
 import 'homepage.dart';
 import 'drawer/loaneligibi.dart';
+import 'salerent.dart';
 import 'user/profile.dart';
 
 class DashBoard extends StatefulWidget {
@@ -16,6 +17,7 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+
 
 
 bool isvisible = true;
@@ -27,7 +29,7 @@ bool isvisible = true;
   var pages = [
     new Homepage(),
     new Listview(),
-    new Homepage(),
+    new Salerent(),
     new Alert(),
     new Profilepage()
   ];
@@ -58,17 +60,22 @@ bool isvisible = true;
                 selectedItemColor: AppColors.pink,
                 unselectedItemColor: Colors.white,
                 backgroundColor: AppColors.darkblue,
+
                 onTap: onTappedChanged,
                 items: [
                   BottomNavigationBarItem(
                     icon: Image.asset(
                       "assets/icon/whitehome.png",
-                      height: 30,
+                      height: 20,
+                      color: Colors.white,
+
                     ),
+                    activeIcon: Image.asset("assets/icon/whitehome.png",height: 20,color: AppColors.pink,),
+
                     title: new Text(
                       "Home",
                       style: TextStyle(
-                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10),
+                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10,color: Colors.white),
                     ),
                   ),
                   BottomNavigationBarItem(
@@ -76,25 +83,30 @@ bool isvisible = true;
                       "assets/icon/heart.png",
                       height: 20,
                     ),
+                    activeIcon: Image.asset("assets/icon/heart.png",height: 20,color: AppColors.pink,),
                     title: new Text(
                       "Short listed",
                       style: TextStyle(
-                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10),
+                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10,color: Colors.white
+                      ),
                     ),
                   ),
                   BottomNavigationBarItem(
                     icon: InkWell(
-                        onTap: () {
-                          _showModalBottomSheet();
-                        },
-                        child: Image.asset(
-                          "assets/icon/add.png",
-                          height: 20,
-                        )),
+                      onTap: (){
+
+                       // Navigator.push(context, MaterialPageRoute(builder: (context) => Salerent()),);
+                      },
+
+                      child: Image.asset(
+                        "assets/icon/add.png",
+                        height: 20,
+                      ),
+                    ),activeIcon: Image.asset("assets/icon/add.png",height: 20,color: AppColors.pink,),
                     title: new Text(
                       "Post",
                       style: TextStyle(
-                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10),
+                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10,color: Colors.white),
                     ),
                   ),
                   BottomNavigationBarItem(
@@ -102,10 +114,11 @@ bool isvisible = true;
                       "assets/icon/aleart.png",
                       height: 20,
                     ),
+                    activeIcon: Image.asset("assets/icon/aleart.png",height: 20,color: AppColors.pink,),
                     title: new Text(
                       "Aleart",
                       style: TextStyle(
-                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10),
+                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10,color: Colors.white),
                     ),
                   ),
                   BottomNavigationBarItem(
@@ -113,10 +126,11 @@ bool isvisible = true;
                       "assets/icon/profile.png",
                       height: 20,
                     ),
+                    activeIcon: Image.asset("assets/icon/profile.png",height: 20,color: AppColors.pink,),
                     title: new Text(
                       "Profile",
                       style: TextStyle(
-                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10),
+                          fontFamily: 'RobotoCondensed-Regular', fontSize: 10,color: Colors.white),
                     ),
                   ),
                 ],

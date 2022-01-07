@@ -10,6 +10,21 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int currentStep = 0;
+  bool viewVisible = true ;
+  bool selected = true;
+  bool Selected = true;
+  void showWidget(){
+    setState(() {
+      viewVisible = true ;
+    });
+  }
+
+  void hideWidget(){
+    setState(() {
+      viewVisible = false ;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,7 +111,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           RaisedButton(
                               color: AppColors.pink,
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+
+                                    //selected== true?showWidget():hideWidget();
+                                    selected== true?showWidget:hideWidget;
+                                });
+
+
+                              },
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)),
                               child: Text(
@@ -114,192 +137,201 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             SizedBox(height: 15,),
-            Theme(
-              data: ThemeData(
-                  accentColor: Colors.pinkAccent,
 
-                  colorScheme: ColorScheme.light(
-                    background: Colors.pink,
-                      primary: Colors.pinkAccent
-                  )
-              ),
-              child: Stepper(
 
-                steps:[
 
-                  Step(
-                    title: Container(
-                      height: 80,
-                      width: 378,
-                      child: Card(
+            Visibility(
+              visible: viewVisible,
 
-                        color: AppColors.grey,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Pending",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
-                              SizedBox(height: 10,),
+              child: Container(
+                child: Theme(
+                  data: ThemeData(
+                      accentColor: AppColors.pink,
 
-                              Text("Processing to next step",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
+                      colorScheme: ColorScheme.light(
+                        background: AppColors.pink,
+                          primary: AppColors.pink
+                      )
+                  ),
+                  child: Stepper(
 
-                            ],
+                    steps:[
+
+                      Step(
+                        title: Container(
+                          height: 80,
+                          width: 378,
+                          child: Card(
+
+                            color: AppColors.grey,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Pending",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
+                                  SizedBox(height: 10,),
+
+                                  Text("Processing to next step",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
+
+                                ],
+                              ),
+                            ),
                           ),
                         ),
+                        content: Column(
+                          children: <Widget>[
+
+                          ],
+                        ),
+                        isActive: currentStep >= 0,
+                        state: currentStep == 0 ?
+                        StepState.editing : StepState.complete,
                       ),
-                    ),
-                    content: Column(
-                      children: <Widget>[
+                      Step(
+                        title: Container(
+                          height: 80,
+                          width: 378,
+                          child: Card(
 
-                      ],
-                    ),
-                    isActive: currentStep >= 0,
-                    // state: currentStep == 0 ?
-                    // StepState.editing : StepState.complete,
-                  ),
-                  Step(
-                    title: Container(
-                      height: 80,
-                      width: 378,
-                      child: Card(
+                            color: AppColors.grey,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Application Under Process",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
+                                  SizedBox(height: 10,),
 
-                        color: AppColors.grey,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Application Under Process",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
-                              SizedBox(height: 10,),
+                                  Text("Processing to next step",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
 
-                              Text("Processing to next step",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
-
-                            ],
+                                ],
+                              ),
+                            ),
                           ),
                         ),
+                        content: Column(
+                          children: <Widget>[
+                          ],
+                        ),
+                        isActive: currentStep >= 1,
+                        state: currentStep == 1 ?
+                        StepState.editing : currentStep < 1 ? StepState.disabled: StepState.complete,
                       ),
-                    ),
-                    content: Column(
-                      children: <Widget>[
-                      ],
-                    ),
-                    // isActive: currentStep >= 1,
-                    // state: currentStep == 1 ?
-                    // StepState.editing : currentStep < 1 ? StepState.disabled: StepState.complete,
-                  ),
-                  Step(
-                    title: Container(
-                      height: 80,
-                      width: 378,
-                      child: Card(
+                      Step(
+                        title: Container(
+                          height: 80,
+                          width: 378,
+                          child: Card(
 
-                        color: AppColors.grey,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Pending",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
-                              SizedBox(height: 10,),
+                            color: AppColors.grey,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Pending",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
+                                  SizedBox(height: 10,),
 
-                              Text("Processing to next step",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
+                                  Text("Processing to next step",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
 
-                            ],
+                                ],
+                              ),
+                            ),
                           ),
                         ),
+                        content: Column(
+                          children: <Widget>[
+
+                          ],
+                        ),
+                        isActive:currentStep >= 2,
+                        state: currentStep == 2 ?
+                        StepState.editing : currentStep < 2 ? StepState.disabled: StepState.complete,
                       ),
-                    ),
-                    content: Column(
-                      children: <Widget>[
+                      Step(
+                        title: Container(
+                          height: 80,
+                          width: 378,
+                          child: Card(
 
-                      ],
-                    ),
-                    // isActive:currentStep >= 2,
-                    // state: currentStep == 2 ?
-                    // StepState.editing : currentStep < 2 ? StepState.disabled: StepState.complete,
-                  ),
-                  Step(
-                    title: Container(
-                      height: 80,
-                      width: 378,
-                      child: Card(
+                            color: AppColors.grey,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Application in Query",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
+                                  SizedBox(height: 10,),
 
-                        color: AppColors.grey,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Application in Query",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
-                              SizedBox(height: 10,),
+                                  Text("Lorem Ipsum is simply dummy text of the printin",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
 
-                              Text("Lorem Ipsum is simply dummy text of the printin",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
-
-                            ],
+                                ],
+                              ),
+                            ),
                           ),
                         ),
+                        content: Column(
+                          children: <Widget>[
+
+                          ],
+                        ),
+                        isActive:currentStep >= 3,
+                        state: currentStep == 3 ?
+                        StepState.editing : currentStep < 3 ? StepState.disabled: StepState.complete,
                       ),
-                    ),
-                    content: Column(
-                      children: <Widget>[
+                      Step(
+                        title: Container(
+                          height: 80,
+                          width: 378,
+                          child: Card(
 
-                      ],
-                    ),
-                    // isActive:currentStep >= 3,
-                    // state: currentStep == 3 ?
-                    // StepState.editing : currentStep < 3 ? StepState.disabled: StepState.complete,
-                  ),
-                  Step(
-                    title: Container(
-                      height: 80,
-                      width: 378,
-                      child: Card(
+                            color: AppColors.grey,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Query Under Process",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
+                                  SizedBox(height: 10,),
 
-                        color: AppColors.grey,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Query Under Process",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 12),),
-                              SizedBox(height: 10,),
+                                  Text("Processing to next step",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
 
-                              Text("Processing to next step",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 12),),
-
-                            ],
+                                ],
+                              ),
+                            ),
                           ),
                         ),
+                        content: Column(
+                          children: <Widget>[
+
+                          ],
+                        ),
+                        isActive:currentStep >= 4,
+                        state: currentStep == 4 ?
+                        StepState.editing : currentStep < 4 ? StepState.disabled: StepState.complete,
                       ),
-                    ),
-                    content: Column(
-                      children: <Widget>[
 
-                      ],
-                    ),
-                    // isActive:currentStep >= 4,
-                    // state: currentStep == 4 ?
-                    // StepState.editing : currentStep < 4 ? StepState.disabled: StepState.complete,
+                    ],
+                    currentStep: currentStep,
+                    onStepTapped: (int step)
+                    {
+                      setState(() {
+                        currentStep = step;
+                      });
+                    },
+                    onStepCancel: ()
+                    {
+                      currentStep > 0 ?
+                      setState(() => currentStep -= 1) : null;
+                    },
+                    onStepContinue: ()
+                    {
+                      currentStep < 4 ?
+                      setState(() => currentStep += 1): null;
+                    },
                   ),
-
-                ],
-                // currentStep: currentStep,
-                // onStepTapped: (int step)
-                // {
-                //   setState(() {
-                //     currentStep = step;
-                //   });
-                // },
-                // onStepCancel: ()
-                // {
-                //   currentStep > 0 ?
-                //   setState(() => currentStep -= 1) : null;
-                // },
-                // onStepContinue: ()
-                // {
-                //   currentStep < 2 ?
-                //   setState(() => currentStep += 1): null;
-                // },
+                ),
               ),
             ),
           ],

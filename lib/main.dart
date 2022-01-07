@@ -7,7 +7,7 @@ import 'package:home_ex/user/splash.dart';
 import 'List.dart';
 import 'alert.dart';
 import 'appliedservices.dart';
-import 'applyloan.dart';
+import 'drawer/applyloan.dart';
 import 'drawer/balance.dart';
 import 'dashboard.dart';
 import 'drawer/emicalculator.dart';
@@ -15,6 +15,7 @@ import 'filter.dart';
 import 'drawer/legalservice.dart';
 import 'loandetail.dart';
 import 'drawer/loaneligibi.dart';
+import 'myloan.dart';
 import 'user/profile.dart';
 import 'drawer/stepper.dart';
 import 'drawer/drawerPage.dart';
@@ -24,6 +25,7 @@ import 'onboard.dart';
 import 'propertydetail.dart';
 import 'propertydetail2.dart';
 import 'salerent.dart';
+import 'userloandetail.dart';
 
 void main(){
   runApp(Home_ex());
@@ -35,7 +37,7 @@ class Home_ex extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home:  Splash(),
+    home:  Loginpage(),
     );
   }
 }

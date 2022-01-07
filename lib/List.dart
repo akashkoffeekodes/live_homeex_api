@@ -77,7 +77,12 @@ class _ListviewState extends State<Listview> {
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(AppColors.pink),
                               ),
-                                onPressed:null, child: Text("CONTACT US NOW",style: TextStyle(color: Colors.white,fontSize: 8),)
+                                onPressed:(){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => Propertydetail()),
+                                  );
+                                }, child: Text("CONTACT US NOW",style: TextStyle(color: Colors.white,fontSize: 8),)
 
                             )
                           ],
