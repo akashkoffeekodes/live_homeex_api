@@ -16,7 +16,7 @@ class Editprofilt extends StatefulWidget {
 class _EditprofiltState extends State<Editprofilt> {
 
   File _image;
-
+int clicked;
 
   _imgFromCamera() async {
     File image = await ImagePicker.pickImage(
@@ -41,7 +41,7 @@ class _EditprofiltState extends State<Editprofilt> {
       appBar: AppBar(
         backgroundColor: AppColors.darkblue,
         leading: Padding(
-          padding: const EdgeInsets.only(top: 15,bottom: 15,),
+          padding: const EdgeInsets.all(20),
           child: InkWell(
             onTap: (){
               Navigator.pop(context);
@@ -52,7 +52,7 @@ class _EditprofiltState extends State<Editprofilt> {
           ),
         ),
 
-        title: Text("Edit Profile",style: TextStyle(fontSize: 20),),
+        title: Text("Edit Profile",style: TextStyle(fontSize: 12),),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -97,7 +97,7 @@ class _EditprofiltState extends State<Editprofilt> {
                      ),
 
                      Padding(
-                       padding: const EdgeInsets.only(top: 10, left: 25),
+                       padding: const EdgeInsets.only(top: 10, left: 5),
                        child: Column(
                          crossAxisAlignment: CrossAxisAlignment.center,
                          children: [
@@ -142,6 +142,7 @@ class _EditprofiltState extends State<Editprofilt> {
                       child: Text("Edit Your Personal Informmation",style: TextStyle(fontFamily: "RobotoCondensed-Bold",fontSize: 15),)),
 
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 10,),
                       Text("Name",style: TextStyle(fontFamily: "RobotoCondensed-Regular",fontSize: 10),),
@@ -241,41 +242,60 @@ class _EditprofiltState extends State<Editprofilt> {
                   fontFamily: "RobotoCondensed-Regular", fontSize: 12),
               ),
             ),
-
+            SizedBox(height: 10,),
             Container(
-              padding: EdgeInsets.only(right: 20,left: 20),
+              padding: EdgeInsets.only(left: 20,right: 20),
               child: Row(
                 children: [
-                  RaisedButton(
+                  Expanded(
+                    child: RaisedButton(
 
 
-                      color: AppColors.pink,
-                      onPressed: (){},
-                      shape: RoundedRectangleBorder(
+                        color: clicked == 1 ? AppColors.pink : Colors.white,
+                        onPressed: (){
+                          setState(() {
+                            clicked =1;
+                          });
+                        },
+                        shape: RoundedRectangleBorder(
 
-                          borderRadius: BorderRadius.circular(1)),
-                      child: Text("Agent",
-                        style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                            borderRadius: BorderRadius.circular(1)),
+                        child: Text("Agent",
+                          style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                  ),
                   SizedBox(width: 12,),
-                  RaisedButton(
+                  Expanded(
+                    child: RaisedButton(
+                        color: clicked == 2 ? AppColors.pink : Colors.white,
 
-                      color: Colors.white,
-                      onPressed: (){},
-                      shape: RoundedRectangleBorder(
+                        onPressed: (){
+                          setState(() {
+                            clicked =2;
+                          });
+                        },
+                        shape: RoundedRectangleBorder(
 
-                          borderRadius: BorderRadius.circular(1)),
-                      child: Text("Ownwe",
-                        style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                            borderRadius: BorderRadius.circular(1)),
+                        child: Text("Ownwe",
+                          style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                  ),
                   SizedBox(width: 12,),
-                  RaisedButton(
+                  Expanded(
+                    child: RaisedButton(
 
-                      color: Colors.white,
-                      onPressed: (){},
-                      shape: RoundedRectangleBorder(
+                        color: clicked == 3 ? AppColors.pink : Colors.white,
+                        onPressed: (){
 
-                          borderRadius: BorderRadius.circular(1)),
-                      child: Text("Builder",
-                        style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                          setState(() {
+                            clicked=3;
+                          });
+                        },
+                        shape: RoundedRectangleBorder(
+
+                            borderRadius: BorderRadius.circular(1)),
+                        child: Text("Builder",
+                          style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                  ),
 
 
                 ],

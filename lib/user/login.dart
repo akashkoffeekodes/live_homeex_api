@@ -12,7 +12,7 @@ class Loginpage extends StatefulWidget {
   _LoginpageState createState() => _LoginpageState();
 }
 
-//final _formKey = GlobalKey<FormState>();
+final _formKey = GlobalKey<FormState>();
 final key = GlobalKey<FormState>();
 
 class _LoginpageState extends State<Loginpage> {
@@ -28,7 +28,7 @@ class _LoginpageState extends State<Loginpage> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Form(
-          key: key,
+          key: _formKey,
           child: Column(
             children: [
               Container(
@@ -167,7 +167,7 @@ class _LoginpageState extends State<Loginpage> {
                 child: RaisedButton(
                   onPressed: () {
                     setState(() {
-                      if (key.currentState.validate()) {
+                      if (_formKey.currentState.validate()) {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard()),);
                       }
 
@@ -210,7 +210,8 @@ class _LoginpageState extends State<Loginpage> {
   }
 
   void login(context) async {
-    if (key.currentState.validate()) {
+    if (_formKey.currentState.validate()) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard()),);
       // If the form is valid, display a snackbar. In the real world,
       // you'd often call a server or save the information in a database.
       ScaffoldMessenger.of(context).showSnackBar(

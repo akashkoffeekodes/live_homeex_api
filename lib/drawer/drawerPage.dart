@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
+import 'package:home_ex/homepage.dart';
 import 'package:home_ex/user/login.dart';
 import 'package:home_ex/user/register.dart';
 
@@ -110,7 +111,7 @@ class _drawerPageState extends State<drawerPage> {
                 setIndex(0);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Loginpage()),
+                  MaterialPageRoute(builder: (context) => Homepage()),
                 );
               },
             ),
@@ -125,10 +126,7 @@ class _drawerPageState extends State<drawerPage> {
               )),
               onTap: () {
                 setIndex(0);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Loginpage()),
-                );
+               // Navigator.push(context, MaterialPageRoute(builder: (context) => Loginpage()),);
               },
             ),
             ListTile(
@@ -247,10 +245,10 @@ class _drawerPageState extends State<drawerPage> {
               )),
               onTap: () {
                 setIndex(0);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Loginpage()),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => Loginpage()),);
+                //
               },
             ),
             ListTile(
@@ -264,10 +262,10 @@ class _drawerPageState extends State<drawerPage> {
               )),
               onTap: () {
                 setIndex(0);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Loginpage()),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => Loginpage()),
+                // );
               },
             ),
             ListTile(
@@ -281,10 +279,10 @@ class _drawerPageState extends State<drawerPage> {
               )),
               onTap: () {
                 setIndex(0);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Loginpage()),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => Loginpage()),
+                // );
               },
             ),
             ListTile(
@@ -298,10 +296,10 @@ class _drawerPageState extends State<drawerPage> {
               )),
               onTap: () {
                 setIndex(0);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Loginpage()),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => Loginpage()),
+                // );
               },
             ),
 
