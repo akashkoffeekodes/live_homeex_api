@@ -27,7 +27,7 @@ class _RegisterState extends State<Register> {
 var selected;
   List categories = ['Agent', 'Owner', 'Builder', ];
 
-
+int clicked;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ var selected;
       body: SingleChildScrollView(
 
         child: Form(
-          key: key,
+          key: _formKey,
           child: Container(
 
             child: Column(
@@ -235,65 +235,123 @@ var selected;
 
 
                 SizedBox(height: 10,),
+                //list for button
+                // Container(
+                //   height: MediaQuery.of(context).size.height*0.05,
+                //
+                //
+                //
+                //
+                //   child: ListView.builder(
+                //
+                //       scrollDirection: Axis.horizontal,
+                //       shrinkWrap: true,
+                //       itemCount: categories.length,
+                //       itemBuilder: (context, index) {
+                //         return Container(
+                //           padding: EdgeInsets.only(left: 15,right: 5),
+                //
+                //           child: ElevatedButton(
+                //
+                //             style: ButtonStyle(
+                //
+                //
+                //               backgroundColor: MaterialStateProperty.all<Color>(
+                //                   selected == categories[index]
+                //                       ? AppColors.pink
+                //                       : AppColors.grey),
+                //               shape: MaterialStateProperty.all<
+                //                   RoundedRectangleBorder>(
+                //                 RoundedRectangleBorder(
+                //                   side: BorderSide(color: AppColors.grey),
+                //                   borderRadius: BorderRadius.circular(1.0),
+                //                 ),
+                //               ),
+                //             ),
+                //             child: Text(
+                //               categories[index],
+                //               style: TextStyle(
+                //                   fontFamily: "RobotoCondensed-Bold",
+                //                   color: selected == categories[index]
+                //                       ?Colors.black
+                //                       : Colors.black,
+                //                   fontSize: 12),
+                //             ),
+                //             onPressed: () {
+                //               setState(() {
+                //                 selected = categories[index];
+                //               });
+                //               // Navigator.push(
+                //               //     context,
+                //               //     MaterialPageRoute(
+                //               //         builder: (context) => ()));
+                //             },
+                //           ),
+                //         );
+                //       }),
+                //
+                //
+                // ),
+
                 Container(
-                  height: MediaQuery.of(context).size.height*0.05,
+                  padding: EdgeInsets.only(left: 20,right: 20),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: RaisedButton(
 
 
-
-
-                  child: ListView.builder(
-
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemCount: categories.length,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          padding: EdgeInsets.only(left: 15,right: 5),
-
-                          child: ElevatedButton(
-
-                            style: ButtonStyle(
-
-
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  selected == categories[index]
-                                      ? AppColors.pink
-                                      : AppColors.grey),
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  side: BorderSide(color: AppColors.grey),
-                                  borderRadius: BorderRadius.circular(1.0),
-                                ),
-                              ),
-                            ),
-                            child: Text(
-                              categories[index],
-                              style: TextStyle(
-                                  fontFamily: "RobotoCondensed-Bold",
-                                  color: selected == categories[index]
-                                      ?Colors.black
-                                      : Colors.black,
-                                  fontSize: 12),
-                            ),
-                            onPressed: () {
+                            color: clicked == 1 ? AppColors.pink : Colors.white,
+                            onPressed: (){
                               setState(() {
-                                selected = categories[index];
+                                clicked =1;
                               });
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => ()));
                             },
-                          ),
-                        );
-                      }),
+                            shape: RoundedRectangleBorder(
 
+                                borderRadius: BorderRadius.circular(1)),
+                            child: Text("Agent",
+                              style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                      ),
+                      SizedBox(width: 12,),
+                      Expanded(
+                        child: RaisedButton(
+                            color: clicked == 2 ? AppColors.pink : Colors.white,
+
+                            onPressed: (){
+                              setState(() {
+                                clicked =2;
+                              });
+                            },
+                            shape: RoundedRectangleBorder(
+
+                                borderRadius: BorderRadius.circular(1)),
+                            child: Text("Ownwe",
+                              style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                      ),
+                      SizedBox(width: 12,),
+                      Expanded(
+                        child: RaisedButton(
+
+                            color: clicked == 3 ? AppColors.pink : Colors.white,
+                            onPressed: (){
+
+                              setState(() {
+                                clicked=3;
+                              });
+                            },
+                            shape: RoundedRectangleBorder(
+
+                                borderRadius: BorderRadius.circular(1)),
+                            child: Text("Builder",
+                              style: TextStyle(color: Colors.grey,fontFamily: "RobotoCondensed-Bold",fontSize: 12),)),
+                      ),
+
+
+                    ],
+                  ),
 
                 ),
-
-
-
 
 
 
@@ -333,7 +391,7 @@ var selected;
                   padding: EdgeInsets.only(right: 40, left: 40),
                   child: RaisedButton(
                     onPressed: () {
-                      if (key.currentState.validate()) {
+                      if (_formKey.currentState.validate()) {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Loginpage()),);
 
                       }
@@ -357,6 +415,7 @@ var selected;
 
   void login(context) async {
     if (_formKey.currentState.validate()) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Loginpage()),);
       // If the form is valid, display a snackbar. In the real world,
       // you'd often call a server or save the information in a database.
       ScaffoldMessenger.of(context).showSnackBar(
@@ -372,7 +431,7 @@ var selected;
 
 String validatename(String value) {
   if (value.isEmpty) {
-    return 'enter your password';
+    return 'Enter your Nmae';
   }
   if (value.length < 4) {
     return 'use more than 4 character';
@@ -392,9 +451,9 @@ String validatemobile(String value) {
 
 String validateemail(String value) {
   if (value.isEmpty) {
-    return "Enter your email-id";
+    return "Enter your Email-id";
   }
-  Pattern pattern = "@gmail.com";
+  Pattern pattern = "@.com";
   RegExp regex = RegExp(pattern);
   if (!regex.hasMatch(value)) {
     return 'Enter valid email-id';
@@ -405,7 +464,7 @@ String validateemail(String value) {
 
 String validatepassword(String value) {
   if (value.isEmpty) {
-    return 'enter your password';
+    return 'Enter your Password';
   }
   if (value.length < 4) {
     return 'use more than 4 character';

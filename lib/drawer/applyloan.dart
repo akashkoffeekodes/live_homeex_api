@@ -95,24 +95,19 @@ class _ApplyloanState extends State<Applyloan> {
 
                   ),
                   itemBuilder: (BuildContext context, int index){
-                    return InkWell(
-                      onTap: (){
+                    return Card(
 
-                      },
-                      child: Card(
+                      borderOnForeground: true,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
 
-                        borderOnForeground: true,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20),
-                                bottomRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(20),
-
-                              )),
-                          child
-                          : Image.asset(images[index])),
-                    );
+                            )),
+                        child
+                        : Image.asset(images[index]));
                   },
               )),
             ButtonTheme(

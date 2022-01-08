@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
 import 'filter.dart';
+import 'propertydetail2.dart';
 import 'salerent.dart';
 
 class Propertydetail extends StatefulWidget {
@@ -718,7 +719,7 @@ class _PropertydetailState extends State<Propertydetail> {
                         onPressed: (){
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Salerent()),
+                            MaterialPageRoute(builder: (context) => Propertydetail2()),
                           );
                         },
                         shape: RoundedRectangleBorder(

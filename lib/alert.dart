@@ -3,65 +3,93 @@ import 'package:flutter/material.dart';
 import 'package:home_ex/Appcolor.dart';
 import 'package:home_ex/dashboard.dart';
 
-class Alert extends StatelessWidget {
+class Alert extends StatefulWidget {
   const Alert({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.darkblue,
-        leading: Container(
-            padding: EdgeInsets.all(18),
-            child: InkWell(
+  State<Alert> createState() => _AlertState();
+}
 
-              onTap: (){
-                Navigator.pop(context);
-
-              },
-              child: Image.asset(
-                "assets/icon/backmenu.png",
-              ),
-            )),
-        title: Text("Alerts"),
+class _AlertState extends State<Alert> {
+  Future<bool> _onWillPop() async {
+    return (await showDialog(
+      context: context,
+      builder: (context) => new AlertDialog(
+        title: new Text('Are you sure?',style: TextStyle(fontSize: 12,fontFamily: "RobotoCondensed-Bold"),),
+        content: new Text('Do you want to exit an App',style: TextStyle(fontSize: 12,fontFamily: "RobotoCondensed-Regular"),),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: new Text('No',style: TextStyle(fontSize: 12,fontFamily: "RobotoCondensed-Bold"),),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: new Text('Yes',style: TextStyle(fontSize: 12,fontFamily: "RobotoCondensed-Bold"),),
+          ),
+        ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              "assets/icon/alert.png",
-              height: 162,
-              width: 155,
-            ),
-            Container(
-                alignment: Alignment.center,
-                child: Text(
-                  "No notifications yet !",
-                  style: TextStyle(
-                      fontFamily: 'RobotoCondensed-Bold', fontSize: 10),
-                )),
-            SizedBox(
-              height: 10,
-            ),
-            RaisedButton(
-                color: AppColors.pink,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Alert2()),
-                  );
+    )) ?? false;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: _onWillPop,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: AppColors.darkblue,
+          leading: Container(
+              padding: EdgeInsets.all(18),
+              child: InkWell(
+
+                onTap: (){
+                  Navigator.pop(context);
+
                 },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)),
-                child: Text(
-                  "CONTINUE SERACH ",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: "RobotoCondensed-Bold",
-                      fontSize: 15),
-                )),
-          ],
+                child: Image.asset(
+                  "assets/icon/backmenu.png",
+                ),
+              )),
+          title: Text("Alerts"),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/icon/alert.png",
+                height: 162,
+                width: 155,
+              ),
+              Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "No notifications yet !",
+                    style: TextStyle(
+                        fontFamily: 'RobotoCondensed-Bold', fontSize: 10),
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              RaisedButton(
+                  color: AppColors.pink,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Alert2()),
+                    );
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Text(
+                    "CONTINUE SERACH ",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "RobotoCondensed-Bold",
+                        fontSize: 15),
+                  )),
+            ],
+          ),
         ),
       ),
     );

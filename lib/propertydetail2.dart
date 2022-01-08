@@ -243,18 +243,20 @@ class _Propertydetail2State extends State<Propertydetail2> {
                     ),
                   ),
                   SizedBox(height: 15,),
-                  Container(
-                    padding:EdgeInsets.only(right: 20,left: 20),
-                    width: 440,
-                    height: 40,
-                    child: RaisedButton(
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ButtonTheme(
+                      height: 40,
+                      minWidth: 400,
+                      child: RaisedButton(
 
-                        color: AppColors.darkblue,
-                        onPressed: (){},
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Text("Submit",
-                          style: TextStyle(color: Colors.white,fontFamily: "RobotoCondensed-Bold",fontSize: 15),)),
+                          color: AppColors.darkblue,
+                          onPressed: (){},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Text("Submit",
+                            style: TextStyle(color: Colors.white,fontFamily: "RobotoCondensed-Bold",fontSize: 15),)),
+                    ),
                   ),
                 ],
               ),
