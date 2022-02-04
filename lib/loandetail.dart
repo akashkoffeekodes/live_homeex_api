@@ -9,7 +9,7 @@ class LoanDetail extends StatefulWidget {
 }
 
 class _LoanDetailState extends State<LoanDetail> {
-
+bool sagar=true;
   bool visible = true;
   bool visible1 = true;
   bool visible2 = true;
